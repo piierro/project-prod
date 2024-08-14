@@ -6,13 +6,12 @@ import { Navbar } from 'widgetes/Navbar';
 import './styles/index.scss';
 
 const App = () => {
-   const { theme, toggleTheme } = useTheme()
+   const { theme } = useTheme()
 
   return (
     <div className={classNames('App', {}, [theme])}>
         <Navbar />
         <AppRouter />
-        <button onClick={toggleTheme}>TOGGLE</button>
     </div>
   )
 }
