@@ -10,7 +10,7 @@ const root = createRoot(domNode);
 root.render(
   <BrowserRouter>
     <ThemeProvider>
-        <App />
+      <App />
     </ThemeProvider>
   </BrowserRouter>
 );

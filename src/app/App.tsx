@@ -7,15 +7,15 @@ import './styles/index.scss';
 import { Sidebar } from 'widgetes/Sidebar';
 
 const App = () => {
-   const { theme } = useTheme()
+  const { theme } = useTheme()
 
   return (
     <div className={classNames('App', {}, [theme])}>
-        <Navbar />
-        <div className='content-page'>
-          <Sidebar />
-          <AppRouter />
-        </div>
+      <Navbar />
+      <div className='content-page'>
+        <Sidebar />
+        <AppRouter />
+      </div>
     </div>
   )
 }
