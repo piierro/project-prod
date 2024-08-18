@@ -13,7 +13,8 @@ export default tseslint.config (
     'react-hooks': eslintReactHooks,
     '@typescript-eslint':  tseslint.plugin,
     eslintReact,
-  }
+  },
+  rules: eslintReactHooks.configs.recommended.rules,
   },
   {
     ignores: ['node_modules', 'build']
