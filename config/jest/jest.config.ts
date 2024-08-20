@@ -9,9 +9,10 @@ const config: Config = {
   modulePaths: [
     '<rootDir>src',
   ],
-  // setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
   moduleNameMapper: {
-    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    '\\.(scss|less)$': 'identity-obj-proxy',
   },
 
   // transform: {
