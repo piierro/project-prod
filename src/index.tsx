@@ -4,7 +4,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'app/providers/ThemeProvider';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 
-
 const domNode = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(domNode);
 
