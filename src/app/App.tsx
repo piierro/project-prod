@@ -5,9 +5,10 @@ import { Navbar } from 'widgetes/Navbar';
 
 import './styles/index.scss';
 import { Sidebar } from 'widgetes/Sidebar';
+import { useEffect } from 'react';
 
 const App = () => {
-  const { theme } = useTheme()
+  const { theme } = useTheme();
 
   return (
     <div className={classNames('App', {}, [theme])}>

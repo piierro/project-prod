@@ -8,3 +8,17 @@
     background: none;
     outline: none;
 }
+
+.error {
+    padding: 15px 10px;
+    font-size: 18px;
+    background: transparent;
+    border: 1px solid #930000;
+    color: #fff6f6b1;
+}
+
+.error:hover {
+    background: #930000;
+    color: #000;
+    transition: 0.3s;
+}
