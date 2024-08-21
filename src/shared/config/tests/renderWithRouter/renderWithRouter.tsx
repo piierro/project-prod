@@ -13,7 +13,7 @@ export function renderWithRouter(component: ReactNode, options: renderWithRouter
 
   return render(
     <MemoryRouter initialEntries={[route]}>
-        {component}
+      {component}
     </MemoryRouter>
   )
 }
