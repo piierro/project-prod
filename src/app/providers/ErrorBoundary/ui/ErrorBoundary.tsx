@@ -34,7 +34,6 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
       </Suspense>
     }
     
-    // eslint-disable react/prop-types
     return this.props.children; 
   }
 }
