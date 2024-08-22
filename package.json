@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve  --env port=3000",
+    "start:dev:server": "node ./json-server/index.js",
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
@@ -43,6 +44,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "json-server": "^0.17.4",
     "mini-css-extract-plugin": "^2.9.0",
     "react-refresh": "^0.14.2",
     "sass": "^1.77.8",
