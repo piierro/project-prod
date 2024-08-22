@@ -3,9 +3,7 @@ import { useTheme } from './providers/ThemeProvider';
 import { AppRouter } from './providers/router';
 import { Navbar } from 'widgetes/Navbar';
 
-import './styles/index.scss';
 import { Sidebar } from 'widgetes/Sidebar';
-import { useEffect } from 'react';
 
 const App = () => {
   const { theme } = useTheme();

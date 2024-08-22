@@ -3,12 +3,17 @@
 @import "themes/normal";
 @import "reset";
 
-.App {
-    font: var(--font-m);
-    background: var(--bg-color);
+.App,
+.App_modal {
     color: var(--primary-color);
+    font-size: var(--font-m);
+}
+
+.App {
+    background: var(--bg-color);
     min-height: 100vh;
 }
+
 
 .content-page {
    display: flex;
