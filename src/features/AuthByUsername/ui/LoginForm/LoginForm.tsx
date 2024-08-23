@@ -13,8 +13,8 @@ export const LoginForm = ({className}: LoginFormProps) => {
     <div className={classNames(cls.LoginForm, {}, [className])}
     >
       <h3 className={cls.entrance}>Login to your acc</h3>
-      <Input type="text" placeholder="Username" />
-      <Input type="text" />
+      <Input type="text" placeholder="Введите username" />
+      <Input type="text" placeholder="Введите пароль"/>
       <Button className={cls.loginBtn} >
         Войти
       </Button>

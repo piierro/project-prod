@@ -7,7 +7,7 @@ type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onC
 interface InputProps extends HTMLInputProps {
     className?: string;
     value?: string;
-    onChange?: (value: string) => void
+    onChange?: (value: string) => void;
 }
 
 const InputComponent = memo((props: InputProps) => {
@@ -22,7 +22,6 @@ const InputComponent = memo((props: InputProps) => {
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);
-
   }
  
   return (

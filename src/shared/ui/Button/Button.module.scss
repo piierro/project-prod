@@ -11,7 +11,15 @@
 }
 
 .clearInverted {
-    color: var(--inverted-secondory-color);
+    color: var(--inverted-primary-color);
+    background: var(--inverted-bg-color);
+    border-radius: 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: var(--modal-z-index);
+    padding: 10px 15px;
+    margin: 25px;
 }
 
 .error {

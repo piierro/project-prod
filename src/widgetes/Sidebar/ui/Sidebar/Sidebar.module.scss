@@ -7,7 +7,7 @@
     border-radius: 16px;
     left: 1vw;
     top: 1vw;
-    user-select: none
+    user-select: none;
 }
 
 .switchers {
@@ -18,15 +18,26 @@
     width: 100%;
 }
 
+.hr {
+    margin: 0;
+    position: relative;
+    left: 5px;
+    bottom: 5px;
+    width: calc(100% - 32px);
+    border: none;
+    border-top: 1px solid var(--inverted-primary-color);
+}
+
 .collapsedBtn {
     position: absolute;
-    right: 15px;
+    right: 20px;
     top: 25px;
+    color: var(--inverted-primary-color);
 }
 
 .items {
     display: flex;
-    margin-top: 20px;
+    margin-top: 80px;
     margin-left: 30px;
     flex-direction: column;
 }
@@ -34,6 +45,7 @@
 .link {
     margin-left: 10px;
     opacity: 1;
+    color: var(--inverted-primary-color)
 }
 
 .item {
@@ -43,7 +55,12 @@
 }
 
 .icon {
-    fill: var(--inverted-secondory-color);
+    fill: var(--inverted-primary-color);
+}
+
+.links {
+    text-decoration: none;
+    margin-left: auto;
 }
 
 .collapsed {
