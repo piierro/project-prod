@@ -11,7 +11,7 @@
 }
 
 .clearInverted {
-    color: var(--inverted-primary-color);
+    color: var(--inverted-secondory-color);
 }
 
 .error {
@@ -35,8 +35,8 @@
 }
 
 .backgroundInverted {
-    background: var(--inverted-bg-color);
-    color: var(--inverted-primary-color);
+    background: none;
+    color: var(--inverted-secondory-color);
     border: none;
 }
 

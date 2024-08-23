@@ -16,7 +16,6 @@ export enum SizeButton {
   XL = 'size_xl' 
 }
 
-
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     theme?: ThemeButton;

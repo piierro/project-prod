@@ -1,0 +1,36 @@
+.LoginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 400px;
+    padding: 20px 25px;
+}
+
+.loginBtn {
+    margin-top: 10px;
+    width: 100%;
+    appearance: none;
+    border: .2em solid var(--inverted-secondory-color);
+    background: var(--inverted-bg-color);
+    padding: .85em 1.5em;
+    color: var(--inverted-secondory-color);
+    border-radius: 2em;
+    transition: 1s;
+
+    &:hover,
+        &:focus,
+        &:active {
+            background: var(--inverted-secondory-color);
+            color: var(--inverted-bg-color);
+        }
+}
+
+.entrance {
+    color: var(--inverted-secondory-color);
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+::placeholder {
+    color: rgba(251, 167, 189, 0.484);
+}

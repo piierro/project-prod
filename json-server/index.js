@@ -1,6 +1,6 @@
-const fs = require('fs');
-const jsonServer = require('json-server');
-const path = require('path');
+const fs = 'fs';
+const jsonServer = 'json-server';
+const path = 'path';
 
 const server = jsonServer.create();
 
@@ -37,7 +37,7 @@ server.post('/login', (req, res) => {
     }
 });
 
-// eslint-disable-next-line
+ 
 server.use((req, res, next) => {
     if (!req.headers.authorization) {
         return res.status(403).json({ message: 'AUTH ERROR' });

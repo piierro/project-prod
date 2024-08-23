@@ -10,7 +10,7 @@ const App = () => {
 
   return (
     <div className={classNames('App', {}, [theme])}>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className='content-page'>
         <Sidebar />
         <AppRouter />

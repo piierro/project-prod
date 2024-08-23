@@ -4,6 +4,10 @@
     background: var(--inverted-bg-color);
     transition: width 0.4s;
     position: relative;
+    border-radius: 16px;
+    left: 1vw;
+    top: 1vw;
+    user-select: none
 }
 
 .switchers {
@@ -16,8 +20,8 @@
 
 .collapsedBtn {
     position: absolute;
-    right: -32px;
-    bottom: 25px;
+    right: 15px;
+    top: 25px;
 }
 
 .items {
