@@ -6,18 +6,19 @@ import { fixupConfigRules } from "@eslint/compat";
 import eslintReactHooks from 'eslint-plugin-react-hooks';
 import eslintReact from 'eslint-plugin-react';
 import { dirname } from "path";
+import { fixupPluginRules } from "@eslint/compat";
 
 export default tseslint.config (
   {
   plugins: {
-    'react-hooks': eslintReactHooks,
+    'react-hooks': fixupPluginRules(eslintReactHooks),
     '@typescript-eslint':  tseslint.plugin,
     eslintReact,
   },
   rules: eslintReactHooks.configs.recommended.rules,
   },
   {
-    ignores: ['node_modules', 'build']
+    ignores: ['node_modules', 'build'],
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
@@ -34,7 +35,7 @@ export default tseslint.config (
       project: './tsconfig.json',
       tsconfigRootDir: dirname,
       parser: '@typescript-eslint/parser'
-    }
+    },
    }
   },
   {
@@ -58,13 +59,13 @@ export default tseslint.config (
     "@typescript-eslint/no-unused-vars": "warn",
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
-    'max-len': ['error', { ignoreComments: true, code: 100 }],
+    'max-len': ['error', { ignoreComments: true, code: 110 }],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
     'no-param-reassign': 'off',
-    "react/prop-types": "off"
+    "react/prop-types": "off",
    },
   }
 );
