@@ -7,6 +7,7 @@ import { memo, useCallback } from 'react';
 import { loginActions } from '../../model/slice/LoginSlice';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUserName/loginByUserName';
 
 interface LoginFormProps {
     className?: string 
@@ -24,8 +25,14 @@ export const LoginForm = memo(({className}: LoginFormProps) => {
     dispatch(loginActions.setPassword(value))
   }, [dispatch])
 
+  // Argument of type 'AsyncThunkAction<User, LoginByUsernameProps, 
+  // { rejectValue: string; state?: unknown; dispatch?: ThunkDispatch<unknown,
+  //    unknown, UnknownAction>; extra?: unknown; serializedErrorType?: unknown; 
+  //    pendingMeta?: unknown; fulfilledMeta?: unknown; rejectedMeta?: unknown; }>' 
+  //    is not assignable to parameter of type 'UnknownAction'.
+
   // const onLoginClick = useCallback(() => {
-  //   dispatch(loginByUserName({ username, password }))
+  //   dispatch(loginByUsername({ username, password }))
   // }, [dispatch, username, password ])
  
   return (
