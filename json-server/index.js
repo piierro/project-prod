@@ -1,6 +1,6 @@
-const fs = 'fs';
-const jsonServer = 'json-server';
-const path = 'path';
+const fs = require('fs');
+const jsonServer = require('json-server');
+const path = require('path');
 
 const server = jsonServer.create();
 

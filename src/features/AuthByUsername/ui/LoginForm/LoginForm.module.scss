@@ -15,10 +15,9 @@
     padding: .85em 1.5em;
     color: var(--secondory-color);
     border-radius: 2em;
-    transition: 1s;
+    transition: 0.3s;
 
     &:hover,
-        &:focus,
         &:active {
             background: var(--secondory-color);
             color: var(--inverted-bg-color);
