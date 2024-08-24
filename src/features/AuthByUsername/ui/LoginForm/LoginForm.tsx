@@ -14,7 +14,7 @@ interface LoginFormProps {
     className?: string 
 }
 
-export const LoginForm = memo(({className}: LoginFormProps) => {
+export const LoginComponent = memo(({className}: LoginFormProps) => {
   const dispatch = useDispatch<AppDispatch>();
   const { username, password, error, isLoading } = useSelector(getLoginState)
   
@@ -56,3 +56,7 @@ export const LoginForm = memo(({className}: LoginFormProps) => {
     </div>
   )
 })
+
+LoginComponent.displayName = 'LoginComponent';
+
+export const Login = memo(LoginComponent);
