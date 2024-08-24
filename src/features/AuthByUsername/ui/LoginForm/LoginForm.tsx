@@ -7,7 +7,6 @@ import { memo, useCallback } from 'react';
 import { loginActions } from '../../model/slice/LoginSlice';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { loginByUserName } from 'features/AuthByUsername/model/services/loginByUserName/loginByUserName';
 
 interface LoginFormProps {
     className?: string 
