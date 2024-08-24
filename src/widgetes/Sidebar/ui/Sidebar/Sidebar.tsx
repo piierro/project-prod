@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import * as cls from './Sidebar.module.scss';
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { ThemeSwitcher } from 'widgetes/ThemeSwitcher';
 import { Button, SizeButton, ThemeButton } from 'shared/ui/Button/Button';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
@@ -8,7 +8,6 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import HomeIcon from 'shared/assets/icons/home.svg';
 import InfoIcon from 'shared/assets/icons/info.svg';
 import BurgerMenu from 'shared/assets/icons/menu.svg'
-import { LoginModal } from 'features/AuthByUsername';
 
 interface SidebarProps {
     className?: string 
