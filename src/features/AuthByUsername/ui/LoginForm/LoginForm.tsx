@@ -59,4 +59,4 @@ export const LoginComponent = memo(({className}: LoginFormProps) => {
 
 LoginComponent.displayName = 'LoginComponent';
 
-export const Login = memo(LoginComponent);
+export const LoginForm = memo(LoginComponent);
