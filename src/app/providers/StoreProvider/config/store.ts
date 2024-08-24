@@ -4,14 +4,19 @@ import { loginReducer } from 'features/AuthByUsername';
 import { StateSchema } from './StateSchema';
 
 export function createReduxStore(initialState?: StateSchema) {
-    const rootReducers: ReducersMapObject<StateSchema> = {
-        user: userReducer,
-        loginForm: loginReducer,
-    };
+  const rootReducers: ReducersMapObject<StateSchema> = {
+    user: userReducer,
+    loginForm: loginReducer,
+  };
 
-    return configureStore<StateSchema>({
-        reducer: rootReducers,
-        devTools: __IS_DEV__,
-        preloadedState: initialState,
-    });
+  const store = configureStore({
+    reducer: rootReducers,
+    devTools: __IS_DEV__,
+    preloadedState: initialState,
+  })
+
+  return store;
 }
+
+export type RootState = ReturnType<ReturnType<typeof createReduxStore>['getState']>
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

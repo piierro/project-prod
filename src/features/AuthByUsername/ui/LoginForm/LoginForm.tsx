@@ -8,13 +8,14 @@ import { loginActions } from '../../model/slice/LoginSlice';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUserName/loginByUserName';
+import { AppDispatch } from 'app/providers/StoreProvider/config/store';
 
 interface LoginFormProps {
     className?: string 
 }
 
 export const LoginForm = memo(({className}: LoginFormProps) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const { username, password, error, isLoading } = useSelector(getLoginState)
   
   const onChangeUserName =  useCallback((value: string) => {
@@ -25,15 +26,9 @@ export const LoginForm = memo(({className}: LoginFormProps) => {
     dispatch(loginActions.setPassword(value))
   }, [dispatch])
 
-  // Argument of type 'AsyncThunkAction<User, LoginByUsernameProps, 
-  // { rejectValue: string; state?: unknown; dispatch?: ThunkDispatch<unknown,
-  //    unknown, UnknownAction>; extra?: unknown; serializedErrorType?: unknown; 
-  //    pendingMeta?: unknown; fulfilledMeta?: unknown; rejectedMeta?: unknown; }>' 
-  //    is not assignable to parameter of type 'UnknownAction'.
-
-  // const onLoginClick = useCallback(() => {
-  //   dispatch(loginByUsername({ username, password }))
-  // }, [dispatch, username, password ])
+  const onLoginClick = useCallback(() => {
+    dispatch(loginByUsername({ username, password }))
+  }, [dispatch, username, password ])
  
   return (
     <div className={classNames(cls.LoginForm, {}, [className])}>
@@ -53,7 +48,7 @@ export const LoginForm = memo(({className}: LoginFormProps) => {
       />
       <Button 
         className={cls.loginBtn} 
-        // onClick={onLoginClick}
+        onClick={onLoginClick}
         disabled={isLoading}
       >
         Войти
