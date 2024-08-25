@@ -4,20 +4,33 @@ import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
-import { loginActions } from '../../model/slice/LoginSlice';
-import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
+import { loginActions, loginReducer } from '../../model/slice/LoginSlice';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUserName/loginByUserName';
+import { loginByUsername } from '../../model/services/loginByUserName/loginByUserName';
 import { AppDispatch } from 'app/providers/StoreProvider/config/store';
+import { getLoginUserName } from '../../model/selectors/getLoginUserName/getLoginUserName';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
+import { 
+  DynamicModuleLoader, ReducersList
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
-interface LoginFormProps {
-    className?: string 
+export interface LoginFormProps {
+  className?: string 
 }
 
-export const LoginComponent = memo(({className}: LoginFormProps) => {
+const initialReducers: ReducersList = {
+  loginForm: loginReducer
+}
+
+const LoginComponent = memo(({className}: LoginFormProps) => {
   const dispatch = useDispatch<AppDispatch>();
-  const { username, password, error, isLoading } = useSelector(getLoginState)
-  
+  const username = useSelector(getLoginUserName);
+  const password = useSelector(getLoginPassword);
+  const error = useSelector(getLoginError);
+  const isLoading = useSelector(getLoginIsLoading);
+
   const onChangeUserName =  useCallback((value: string) => {
     dispatch(loginActions.setUserName(value))
   }, [dispatch])
@@ -31,32 +44,36 @@ export const LoginComponent = memo(({className}: LoginFormProps) => {
   }, [dispatch, username, password ])
  
   return (
-    <div className={classNames(cls.LoginForm, {}, [className])}>
-      <h2 className={cls.entrance}>Форма авторизации</h2>
-      {error && <Text text={error} theme={TextTheme.ERROR} />}
-      <Input 
-        type="text" 
-        placeholder="Введите username"
-        onChange={onChangeUserName}
-        value={username}
-      />
-      <Input 
-        type="text" 
-        placeholder="Введите пароль"
-        onChange={onChangePassword}
-        value={password}
-      />
-      <Button 
-        className={cls.loginBtn} 
-        onClick={onLoginClick}
-        disabled={isLoading}
-      >
-        Войти
-      </Button>
-    </div>
+    <DynamicModuleLoader reducers={initialReducers}>
+      <div className={classNames(cls.LoginForm, {}, [className])}>
+        <h2 className={cls.entrance}>Форма авторизации</h2>
+        {error && <Text text={error} theme={TextTheme.ERROR} />}
+        <Input 
+          type="text" 
+          placeholder="Введите username"
+          onChange={onChangeUserName}
+          value={username}
+        />
+        <Input 
+          type="text" 
+          placeholder="Введите пароль"
+          onChange={onChangePassword}
+          value={password}
+        />
+        <Button 
+          className={cls.loginBtn} 
+          onClick={onLoginClick}
+          disabled={isLoading}
+        >
+          Войти
+        </Button>
+      </div>
+    </DynamicModuleLoader>
   )
 })
 
 LoginComponent.displayName = 'LoginComponent';
 
-export const LoginForm = memo(LoginComponent);
+const LoginForm = memo(LoginComponent);
+
+export default LoginForm;
