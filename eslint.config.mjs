@@ -10,6 +10,11 @@ import { fixupPluginRules } from "@eslint/compat";
 
 export default tseslint.config (
   {
+  settings: {
+    eslintReact: {
+     version: "detect",
+    },
+  },
   plugins: {
     'react-hooks': fixupPluginRules(eslintReactHooks),
     '@typescript-eslint':  tseslint.plugin,
@@ -26,7 +31,7 @@ export default tseslint.config (
   {
   languageOptions: { 
     globals: {
-      ...globals.node,
+      // ...globals.node,
       ...globals.browser,
       ...globals.es2021,
       __IS_DEV__: true,
@@ -66,6 +71,7 @@ export default tseslint.config (
     'react/jsx-uses-vars': 'error',
     'no-param-reassign': 'off',
     "react/prop-types": "off",
+    "react/display-name": "off"
    },
   }
 );

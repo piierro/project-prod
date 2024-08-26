@@ -1,8 +1,5 @@
 import axios from 'axios'
 import { loginByUsername } from './loginByUserName';
-import { Dispatch } from 'redux';
-import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
-import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
 jest.mock('axios');

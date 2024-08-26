@@ -1,5 +1,5 @@
 import { AsyncThunkAction } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
+import { StateSchema } from 'app/providers/StoreProvider';
 
 // ДЛЯ ТЕСТИРОВАНИЯ АСИНХРОННЫХ ФАНКОВ
 
@@ -7,7 +7,6 @@ type ActionCreatorType<Return, Arg, RejectValue>
 = (arg: Arg) => AsyncThunkAction<Return, Arg, {rejectValue: RejectValue}>
 
 export class TestAsyncThunk<Return, Arg, RejectValue> {
-  //  @ts-ignore
   dispatch: jest.MockedFn<any>;
   getState: () => StateSchema;
   actionCreator: ActionCreatorType<Return, Arg, RejectValue>;
