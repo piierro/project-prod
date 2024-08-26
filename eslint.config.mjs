@@ -4,21 +4,21 @@ import tseslint from "typescript-eslint";
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
 import { fixupConfigRules } from "@eslint/compat";
 import eslintReactHooks from 'eslint-plugin-react-hooks';
-import react from 'eslint-plugin-react';
+import eslintReact from 'eslint-plugin-react';
 import { dirname } from "path";
 import { fixupPluginRules } from "@eslint/compat";
 
 export default tseslint.config (
   {
   settings: {
-    react: {
+    eslintReact: {
      version: "detect",
     },
   },
   plugins: {
     'react-hooks': fixupPluginRules(eslintReactHooks),
     '@typescript-eslint':  tseslint.plugin,
-    react,
+    eslintReact,
   },
   rules: eslintReactHooks.configs.recommended.rules,
   },
@@ -31,7 +31,7 @@ export default tseslint.config (
   {
   languageOptions: { 
     globals: {
-      ...globals.node,
+      // ...globals.node,
       ...globals.browser,
       ...globals.es2021,
       __IS_DEV__: true,
@@ -71,6 +71,7 @@ export default tseslint.config (
     'react/jsx-uses-vars': 'error',
     'no-param-reassign': 'off',
     "react/prop-types": "off",
+    "react/display-name": "off"
    },
   }
 );

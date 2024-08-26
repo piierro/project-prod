@@ -2,10 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 import { ProfileSchema } from '../types/profile';
 
 const initialState: ProfileSchema = {
-    readonly: true,
-    error: undefined,
-    isLoading: false,
-    data: undefined
+  readonly: true,
+  error: undefined,
+  isLoading: false,
+  data: undefined
 };
 
 export const ProfileSlice = createSlice({
