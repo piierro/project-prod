@@ -4,16 +4,21 @@ import tseslint from "typescript-eslint";
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
 import { fixupConfigRules } from "@eslint/compat";
 import eslintReactHooks from 'eslint-plugin-react-hooks';
-import eslintReact from 'eslint-plugin-react';
+import react from 'eslint-plugin-react';
 import { dirname } from "path";
 import { fixupPluginRules } from "@eslint/compat";
 
 export default tseslint.config (
   {
+  settings: {
+    react: {
+     version: "detect",
+    },
+  },
   plugins: {
     'react-hooks': fixupPluginRules(eslintReactHooks),
     '@typescript-eslint':  tseslint.plugin,
-    eslintReact,
+    react,
   },
   rules: eslintReactHooks.configs.recommended.rules,
   },
