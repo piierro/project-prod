@@ -1,5 +1,6 @@
 import { AsyncThunkAction } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
+import { StateSchema } from 'app/providers/StoreProvider';
+
 
 // ДЛЯ ТЕСТИРОВАНИЯ АСИНХРОННЫХ ФАНКОВ
 
