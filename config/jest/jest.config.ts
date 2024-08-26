@@ -3,7 +3,8 @@ import path from 'path';
 
 const config: Config = {
   globals: {
-    '__IS_DEV__': true
+    '__IS_DEV__': true,
+    '__API__': ''
   },
 
   modulePaths: [
