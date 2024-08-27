@@ -1,31 +1,17 @@
-
 import { StateSchema } from 'app/providers/StoreProvider';
-import { getLoginError } from './getLoginError'
+import { getLoginError } from './getLoginError';
 
-describe('getLoginError', () => {
-  test('should return the login error', () => {
-    const state: StateSchema = {
-      user: {}, // Пустая структура для пользователя, если она не нужна
-      loginForm: { 
-        username: 'testuser', 
-        password: 'testpass', 
-        isLoading: false, 
-        error: 'Invalid credentials'
+describe('getLoginError.test', () => {
+  test('should return error', () => {
+    const state: DeepPartial<StateSchema> = {
+      loginForm: {
+        error: 'error',
       },
     };
-    expect(getLoginError(state)).toEqual('Invalid credentials');
+    expect(getLoginError(state as StateSchema)).toEqual('error');
   });
-
-  test('should return undefined if no error is set', () => {
-    const state: StateSchema = {
-      user: {},
-      loginForm: { 
-        username: 'testuser', 
-        password: 'testpass', 
-        isLoading: false, 
-        error: undefined // Ошибка равна undefined
-      },
-    };
-    expect(getLoginError(state)).toBeUndefined();
+  test('should work with empty state', () => {
+    const state: DeepPartial<StateSchema> = {};
+    expect(getLoginError(state as StateSchema)).toEqual(undefined);
   });
-})
+});

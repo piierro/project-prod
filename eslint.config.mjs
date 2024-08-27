@@ -72,7 +72,9 @@ export default tseslint.config (
     'react/jsx-uses-vars': 'error',
     'no-param-reassign': 'off',
     "react/prop-types": "off",
-    "react/display-name": "off"
+    "react/display-name": "off",
+    "no-undef": "off",
+    "@typescript-eslint/no-explicit-any": "warn"
    },
   }
 );

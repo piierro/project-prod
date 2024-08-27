@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import * as cls from './Button.module.scss';
 import { ButtonHTMLAttributes, ReactNode, memo } from 'react';
 
@@ -29,14 +29,15 @@ export const Button = memo((props: ButtonProps) => {
   const {
     className,
     children,
-    theme,
+    theme = ThemeButton.BACKGGROUND,
     square,
     disabled,
     size = SizeButton.M,
     ...otherProps
   } = props;
 
-  const mods = {
+  const mods: Mods = {
+    [cls[theme]]: true,
     [cls.square]: square,
     [cls[size]]: true,
     [cls.disabled]: disabled
@@ -45,7 +46,7 @@ export const Button = memo((props: ButtonProps) => {
   return (
     <button 
       type='button'
-      className={classNames(cls.Button, mods, [className, cls[theme]])}
+      className={classNames(cls.Button, mods, [className])}
       disabled={disabled}
       {...otherProps}
     >

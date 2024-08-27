@@ -10,6 +10,9 @@ interface SidebarItemProps {
 }
 
 export const SidebarItem = memo(({item, collapsed}: SidebarItemProps) => {
+  if (!item) {
+    return null;
+  }
  
   return (
     <AppLink 
