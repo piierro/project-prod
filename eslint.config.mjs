@@ -35,6 +35,7 @@ export default tseslint.config (
       ...globals.browser,
       ...globals.es2021,
       __IS_DEV__: true,
+      __API__: true
     },
     parserOptions: {
       project: './tsconfig.json',
