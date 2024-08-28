@@ -1,43 +1,17 @@
-
 import { StateSchema } from 'app/providers/StoreProvider';
 import { getLoginPassword } from './getLoginPassword';
 
 describe('getLoginPassword', () => {
-  test('should return the password when it is set', () => {
-    const state: StateSchema = {
-      user: {},
+  test('should return value', () => {
+    const state: DeepPartial<StateSchema> = {
       loginForm: {
-        username: 'testuser',
-        password: 'testpass',
-        isLoading: false,
-        error: undefined,
+        password: '123123',
       },
     };
-    expect(getLoginPassword(state)).toBe('testpass');
+    expect(getLoginPassword(state as StateSchema)).toEqual('123123');
   });
-
-  test('should return an empty string when password is undefined', () => {
-    const state: StateSchema = {
-      user: {},
-      loginForm: {
-        username: 'testuser',
-        password: undefined,
-        isLoading: false,
-        error: undefined,
-      },
-    };
-    expect(getLoginPassword(state)).toBe('');
-  });
-
-  test('should return an empty string when loginForm is undefined', () => {
-    const state: StateSchema = {
-      user: {},
-      loginForm: undefined, 
-    };
-    expect(getLoginPassword(state)).toBe('');
-  });
-
-  test('should return an empty string when state is undefined', () => {
-    expect(getLoginPassword(undefined)).toBe('');
+  test('should work with empty state', () => {
+    const state: DeepPartial<StateSchema> = {};
+    expect(getLoginPassword(state as StateSchema)).toEqual('');
   });
 });

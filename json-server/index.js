@@ -8,6 +8,8 @@ import path from 'path';
 
 const server = jsonServer.create();
 
+const __dirname = path.resolve();
+
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
 
 server.use(jsonServer.defaults({}));
