@@ -7,8 +7,6 @@ import { LoginSchema } from 'features/AuthByUsername';
 
 export interface StateSchema {
     user: UserSchema;
-
-    // Асинхронные редюсеры
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
 }
