@@ -32,7 +32,7 @@ const InputComponent = memo((props: InputProps) => {
  
   return (
     <div className={classNames('', mods, [className])}>
-      <input 
+      <input
         className={cls.Input}
         type={type} 
         value={value}

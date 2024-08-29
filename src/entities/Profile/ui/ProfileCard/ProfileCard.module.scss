@@ -1,6 +1,6 @@
 .ProfileCard {
     padding: 20px;
-    border: 0.5px solid var(--inverted-bg-color);
+    border: 0.5px solid var(--inverted-secondory-color);
     border-radius: 20px;
     width: 400px;
 }
@@ -15,4 +15,14 @@
     align-items: center;
     justify-content: space-around;
     height: 300px;
+}
+
+.avatarWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.editing {
+    border: 1.5px solid var(--inverted-primary-color);
 }
