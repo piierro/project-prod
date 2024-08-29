@@ -1,43 +1,70 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import * as cls from './ProfileCard.module.scss';
-import { useSelector } from 'react-redux';
-import { 
-  getProfileData
-} from 'entities/Profile/model/selectors/getProfileData/getProfileData';
-import { Text } from 'shared/ui/Text/Text';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { Profile } from 'entities/Profile/model/types/profile';
+import { Loader } from 'shared/ui/Loader/Loader';
+import { ProfileHeader } from 'pages/ProfilePage/ui/ProfileHeader/ProfileHeader';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 
 interface ProfileCardProps {
-    className?: string 
+    className?: string;
+    data?: Profile;
+    error?: string;
+    isLoading?: boolean;
+    readonly?: boolean;
+    onChangeFirstName: (value?: string) => void;
+    onChangeLastName: (value?: string) => void;
 }
 
-export const ProfileCard = ({className}: ProfileCardProps) => {
-  const data = useSelector(getProfileData);
-  // const error = useSelector(getProfileError);
-  // const isLoading = useSelector(getProfileIsLoading);
+export const ProfileCard = (props: ProfileCardProps) => {
+  const {
+    className, 
+    data,
+    error,
+    readonly,
+    isLoading,
+    onChangeFirstName,
+    onChangeLastName
+  } = props;
+
+  if(isLoading) {
+    return (
+      <div className={classNames(cls.ProfileCard, {[cls.loading]: true}, [className])}>
+        <Loader />
+      </div>
+    )
+  }
+
+  // if(error) {
+  //   return (
+  //     <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+  //       <Text
+  //         theme={TextTheme.ERROR}
+  //         title={'Произошла ошибка при загрузке профиля'}
+  //         text={'Попробуйте обновить страницу'}
+  //         align={TextAlign.CENTER}
+  //       />
+  //     </div>
+  //   )
+  // }
 
   return (
     <div className={classNames(cls.ProfileCard, {}, [className])}>
-      <div className={cls.header}>
-        <Text title={'Профиль'}/>
-        <Button 
-          theme={ThemeButton.CLEAR}
-          className={cls.editBtn}
-        >
-          Редактировать
-        </Button>
-      </div>
-      <div className={cls.data}>
+      <ProfileHeader />
+      <div>
         <Input
           value={data?.first} 
           placeholder='Имя'
           className={cls.input}
+          onChange={onChangeFirstName}
+          readonly={readonly}
         />
         <Input
           value={data?.lastName} 
           placeholder='Фамилия'
           className={cls.input}
+          onChange={onChangeLastName}
+          readonly={readonly}
         />
       </div>
     </div>

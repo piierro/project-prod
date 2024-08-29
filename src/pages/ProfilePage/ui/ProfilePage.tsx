@@ -1,5 +1,15 @@
-import { ProfileCard, fetchProfileData, profileReducer } from 'entities/Profile';
-import { useEffect } from 'react';
+import { 
+  ProfileCard, 
+  fetchProfileData, 
+  getProfileError, 
+  getProfileForm, 
+  getProfileIsLoading, 
+  getProfileRedonly, 
+  profileActions, 
+  profileReducer
+} from 'entities/Profile';
+import { useCallback, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { 
   DynamicModuleLoader, ReducersList
@@ -17,15 +27,34 @@ interface PageLoaderProps {
 
 const ProfilePage = ({className}: PageLoaderProps) => {
   const dispatch = useAppDispatch();
+  const formData = useSelector(getProfileForm);
+  const error = useSelector(getProfileError);
+  const isLoading = useSelector(getProfileIsLoading);
+  const readonly = useSelector(getProfileRedonly);
 
   useEffect(() => {
     dispatch(fetchProfileData())
+  }, [dispatch])
+
+  const onChangeFirstName = useCallback((value?: string) => {
+     dispatch(profileActions.upDateProfile({first: value || ''}))
+  }, [dispatch])
+
+    const onChangeLastName = useCallback((value?: string) => {
+     dispatch(profileActions.upDateProfile({lastName: value || ''}))
   }, [dispatch])
  
   return (
     <DynamicModuleLoader reducers={reducers}  removeAfterAnMount>
       <div className={classNames('', {}, [className])}>
-        <ProfileCard />
+        <ProfileCard 
+          data={formData}
+          isLoading={isLoading}
+          error={error}
+          readonly={readonly}
+          onChangeFirstName={onChangeFirstName}
+          onChangeLastName={onChangeLastName}
+        />
       </div>
     </DynamicModuleLoader>
   )
