@@ -74,7 +74,7 @@ export default tseslint.config (
     "react/prop-types": "off",
     "react/display-name": "off",
     "no-undef": "off",
-    "@typescript-eslint/no-explicit-any": "warn"
+    "@typescript-eslint/no-explicit-any": "warn",
    },
   }
 );

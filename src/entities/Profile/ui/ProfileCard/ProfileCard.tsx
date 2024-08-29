@@ -3,8 +3,7 @@ import * as cls from './ProfileCard.module.scss';
 import { Input } from 'shared/ui/Input/Input';
 import { Profile } from 'entities/Profile/model/types/profile';
 import { Loader } from 'shared/ui/Loader/Loader';
-import { ProfileHeader } from 'pages/ProfilePage/ui/ProfileHeader/ProfileHeader';
-import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
+// import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 
 interface ProfileCardProps {
     className?: string;
@@ -14,6 +13,8 @@ interface ProfileCardProps {
     readonly?: boolean;
     onChangeFirstName: (value?: string) => void;
     onChangeLastName: (value?: string) => void;
+    onChangeCity: (value?: string) => void;
+    onChangeAge: (value?: string) => void;
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
@@ -24,7 +25,9 @@ export const ProfileCard = (props: ProfileCardProps) => {
     readonly,
     isLoading,
     onChangeFirstName,
-    onChangeLastName
+    onChangeLastName,
+    onChangeAge,
+    onChangeCity
   } = props;
 
   if(isLoading) {
@@ -50,7 +53,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   return (
     <div className={classNames(cls.ProfileCard, {}, [className])}>
-      <ProfileHeader />
       <div>
         <Input
           value={data?.first} 
@@ -64,6 +66,21 @@ export const ProfileCard = (props: ProfileCardProps) => {
           placeholder='Фамилия'
           className={cls.input}
           onChange={onChangeLastName}
+          readonly={readonly}
+        />
+        <Input
+          type="text" 
+          value={data?.age} 
+          placeholder='Возраст'
+          className={cls.input}
+          onChange={onChangeAge}
+          readonly={readonly}
+        />
+        <Input
+          value={data?.city} 
+          placeholder='Город'
+          className={cls.input}
+          onChange={onChangeCity}
           readonly={readonly}
         />
       </div>

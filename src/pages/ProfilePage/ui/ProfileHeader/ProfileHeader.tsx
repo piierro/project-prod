@@ -4,7 +4,7 @@ import { memo, useCallback } from 'react';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
 import { useSelector } from 'react-redux';
-import { getProfileRedonly, profileActions } from 'entities/Profile';
+import { getProfileRedonly, profileActions, upDateProfileData } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 
@@ -14,14 +14,18 @@ interface ProfileHeaderProps {
 
 export const ProfileHeader = memo(({className}: ProfileHeaderProps) => {
   const readonly = useSelector(getProfileRedonly);
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
 
   const onEdit = useCallback(() => {
-     dispatch(profileActions.setReadonly(false))
+    dispatch(profileActions.setReadonly(false))
   }, [dispatch])
 
   const onCancelEdit = useCallback(() => {
-     dispatch(profileActions.cancelEdit())
+    dispatch(profileActions.cancelEdit())
+  }, [dispatch])
+
+  const onSave = useCallback(() => {
+    dispatch(upDateProfileData())
   }, [dispatch])
 
   return (
@@ -45,6 +49,12 @@ export const ProfileHeader = memo(({className}: ProfileHeaderProps) => {
               onClick={onCancelEdit}
             >
               Отменить
+            </Button>
+            <Button 
+              theme={ThemeButton.BACKGGROUND_INVERTED}
+              onClick={onSave}
+            >
+              Сохранить
             </Button>
           </>
         )
