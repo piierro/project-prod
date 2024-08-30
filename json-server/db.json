@@ -25,14 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { 
+  "profile": {
     "first": "Kira",
     "lastName": "M",
-    "age": 20,
-    "currency": "RUB",
-    "country": "Russia",
+    "age": 23,
+    "currency": "EUR",
+    "country": "Korea",
     "city": "Moscow",
     "username": "admin",
-    "avatar": "https://i.pinimg.com/236x/02/93/49/029349a12c86a60392d5eeea61bb611f.jpg"
+    "avatar": "https://i.pinimg.com/236x/c8/cc/24/c8cc24bba37a25c009647b8875aae0e3.jpg"
   }
 }
