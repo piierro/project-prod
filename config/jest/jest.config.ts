@@ -4,7 +4,8 @@ import path from 'path';
 const config: Config = {
   globals: {
     '__IS_DEV__': true,
-    '__API__': ''
+    '__API__': '',
+    '__PROJECT__': 'jest'
   },
 
   modulePaths: [
@@ -12,6 +13,7 @@ const config: Config = {
   ],
   setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
   moduleNameMapper: {
+    // "^src/(.*)": "<rootDir>/../src/$1",
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     '\\.(scss|less)$': 'identity-obj-proxy',
   },
@@ -22,7 +24,7 @@ const config: Config = {
   // },
 
   coveragePathIgnorePatterns: [
-    "/node_modules/"
+    '\\\\node_modules\\\\',
   ],
 
   moduleDirectories: [
@@ -40,7 +42,7 @@ const config: Config = {
     "node"
   ],
 
-  rootDir: "../..",
+  rootDir: "../../",
 
   testEnvironment: "jsdom",
 
