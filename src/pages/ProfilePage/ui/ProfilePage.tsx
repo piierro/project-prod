@@ -5,6 +5,7 @@ import {
   getProfileForm, 
   getProfileIsLoading, 
   getProfileRedonly, 
+  getValidateProfileErrors, 
   profileActions, 
   profileReducer
 } from 'entities/Profile';
@@ -18,6 +19,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ProfileHeader } from './ProfileHeader/ProfileHeader';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 // import * as cls from './ProfilePage.module.scss';
 
 const reducers: ReducersList = {
@@ -34,6 +36,7 @@ const ProfilePage = ({className}: PageLoaderProps) => {
   const error = useSelector(getProfileError);
   const isLoading = useSelector(getProfileIsLoading);
   const readonly = useSelector(getProfileRedonly);
+  const validateErrors = useSelector(getValidateProfileErrors);
 
   useEffect(() => {
     dispatch(fetchProfileData())
@@ -80,6 +83,13 @@ const ProfilePage = ({className}: PageLoaderProps) => {
     <DynamicModuleLoader reducers={reducers}  removeAfterAnMount>
       <div className={classNames('', {}, [className])}>
         <ProfileHeader />
+        {validateErrors?.length && validateErrors.map(err => (
+          <Text 
+            key={err}
+            theme={TextTheme.ERROR} 
+            text={err} 
+          />
+        ))}
         <ProfileCard 
           data={formData}
           isLoading={isLoading}
