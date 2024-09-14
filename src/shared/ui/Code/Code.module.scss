@@ -1,0 +1,13 @@
+.Code {
+    border: 1px solid var(--inverted-secondory-color);
+    padding: 20px;
+    position: relative;
+    background: var(--code-bg);
+    overflow: auto;
+}
+
+.copy {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
