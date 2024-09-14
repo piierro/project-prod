@@ -1,12 +1,12 @@
-const fs = require('fs');
-const jsonServer = require('json-server');
-const path = require('path');
+// const fs = require('fs');
+// const jsonServer = require('json-server');
+// const path = require('path');
 
-// import fs from 'fs';
-// import jsonServer from 'json-server';
-// import path from 'path';
+import fs from 'fs';
+import jsonServer from 'json-server';
+import path from 'path';
 
-// const __dirname = path.resolve();
+const __dirname = path.resolve();
 
 const server = jsonServer.create();
 

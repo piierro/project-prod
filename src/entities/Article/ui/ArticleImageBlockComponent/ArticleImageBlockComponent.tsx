@@ -8,8 +8,8 @@ interface ArticleImageBlockComponentProps {
 
 export const ArticleImageBlockComponent = memo(({className}: ArticleImageBlockComponentProps) => {
   return (
-   <div className={classNames('', {}, [className])}>
-    ArticleImageBlockComponent
-   </div>
+    <div className={classNames('', {}, [className])}>
+      ArticleImageBlockComponent
+    </div>
   )
 })

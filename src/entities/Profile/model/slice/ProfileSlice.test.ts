@@ -1,13 +1,13 @@
 import { ProfileSchema } from '../types/profile';
 import { profileActions, profileReducer } from './ProfileSlice';
 
-const data = {
-  first: "Kuros",
-  lastName: "M",
-  age: 23,
-  city: "Moscow",
-  username: "admin",
-}
+// const data = {
+//   first: "Kuros",
+//   lastName: "M",
+//   age: 23,
+//   city: "Moscow",
+//   username: "admin",
+// }
 
 describe('ProfileSlice', () => {
   test('should set readonly state', () => {

@@ -1,7 +1,9 @@
 import { memo, useEffect } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import * as cls from './ArticleDetails.module.scss';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { 
+  DynamicModuleLoader, ReducersList 
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
@@ -20,7 +22,7 @@ interface ArticleDetailsProps {
 }
 
 const reducers: ReducersList = {
-   articleDetails: articleDetailsReducer
+  articleDetails: articleDetailsReducer
 }
 
 export const ArticleDetails = memo(({className, id}: ArticleDetailsProps) => {

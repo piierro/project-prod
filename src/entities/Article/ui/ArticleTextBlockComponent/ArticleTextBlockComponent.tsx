@@ -8,8 +8,8 @@ interface ArticleTextBlockComponentProps {
 
 export const ArticleTextBlockComponent = memo(({className}: ArticleTextBlockComponentProps) => {
   return (
-   <div className={classNames('', {}, [className])}>
-    ArticleTextBlockComponent
-   </div>
+    <div className={classNames('', {}, [className])}>
+      ArticleTextBlockComponent
+    </div>
   )
 })
