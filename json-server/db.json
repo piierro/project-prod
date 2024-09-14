@@ -11,18 +11,84 @@
       "userId": 2
     }
   ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "News",
+      "subtitle": "ВСЕГО ХОРОШЕГО! ИМХО",
+      "img":  "https://risovach.ru/upload/2014/12/mem/udivlyonnyy-kot_68573964_orig_.jpg",
+      "views": 10007,
+      "createdAt": "13.09.2024",
+      "type": ["MEME"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragpaphs": [
+            "dwFWfwenfweifjefnfeoufwlfnwo;ir3ofjmf3;4outh3fq/"
+          ]
+        },
+        {
+          "id": 4,
+          "type": "CODE",
+          "code": "const mem = 'you'"
+        }, 
+        {
+          "id": 5,
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragpaphs": [
+            "Трахнел суку-захотелю.\nБез гандона-захотел"
+          ]
+        },
+        {
+          "id": 3,
+          "type": "CODE",
+          "code": "const mem = 'you and me'"
+        }, 
+        {
+          "id": 2,
+          "type": "IMAGE",
+          "src": "",
+          "title": "Рисунок 1 - скриншот сайта"
+        }
+      ]
+    }
+
+  ],
   "comments": [
     {
       "id": "1",
-      "body": "some comment",
-      "postId": 1
+      "text": "some comment",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "text": "some comment 2",
+      "articleId": "1",
+      "userId": "1"
+    },
+     {
+      "id": "3",
+      "text": "some comment 3",
+      "articleId": "1",
+      "userId": "1"
     }
   ],
   "users": [
     {
       "id": "1",
-      "username": "admin",
-      "password": "123"
+      "username": "user",
+      "password": "123",
+      "role": "USER"
+    },
+       {
+      "id": "2",
+      "username": "kuros",
+      "password": "777",
+      "role": "ADMIN"
     }
   ],
   "profile": {
