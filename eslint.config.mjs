@@ -4,21 +4,14 @@ import tseslint from "typescript-eslint";
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
 import { fixupConfigRules } from "@eslint/compat";
 import eslintReactHooks from 'eslint-plugin-react-hooks';
-import eslintReact from 'eslint-plugin-react';
 import { dirname } from "path";
 import { fixupPluginRules } from "@eslint/compat";
 
 export default tseslint.config (
   {
-  settings: {
-    eslintReact: {
-     version: "detect",
-    },
-  },
   plugins: {
     'react-hooks': fixupPluginRules(eslintReactHooks),
     '@typescript-eslint':  tseslint.plugin,
-    eslintReact,
   },
   rules: eslintReactHooks.configs.recommended.rules,
   },
@@ -41,7 +34,7 @@ export default tseslint.config (
     parserOptions: {
       project: './tsconfig.json',
       tsconfigRootDir: dirname,
-      parser: '@typescript-eslint/parser'
+      parser: '@typescript-eslint/parser',
     },
    }
   },
@@ -54,7 +47,11 @@ export default tseslint.config (
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'off',
+    "@typescript-eslint/no-unused-vars": [
+        "warn",
+        { "argsIgnorePattern": "^_" }
+    ],
     'react/require-default-props': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': 'warn',
@@ -63,7 +60,6 @@ export default tseslint.config (
     'import/extensions': 'off',
     "no-unused-expressions": "off",
     "@typescript-eslint/no-unused-expressions": "error",
-    "@typescript-eslint/no-unused-vars": "warn",
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'max-len': ['error', { ignoreComments: true, code: 110 }],

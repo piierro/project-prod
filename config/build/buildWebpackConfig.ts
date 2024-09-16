@@ -14,7 +14,8 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
     output: {
       path: paths.build,
       filename: '[name].[contenthash].js',
-      clean: true
+      clean: true,
+      publicPath: '/'
     },
     devtool: isDev ? 'inline-source-map' : undefined,
     plugins: buildPlugins(options),

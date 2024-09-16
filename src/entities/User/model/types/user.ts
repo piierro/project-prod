@@ -1,6 +1,7 @@
 export interface User {
     id: string;
-    username: boolean;
+    username: string;
+    avatar?: string;
 }
 
 export interface UserSchema {
