@@ -11,10 +11,10 @@ interface ArticleImageBlockComponentProps {
 
 export const ArticleImageBlockComponent = memo(({className, block}: ArticleImageBlockComponentProps) => {
   return (
-    <div className={classNames('', {}, [className])}>
+    <div className={classNames(cls.ArticleImageBlockComponent, {}, [className])}>
       <img src={block.src} className={cls.img} alt={block.title}/>
       {block.title && (
-        <Text title={block.title} align={TextAlign.CENTER} />
+        <Text title={block.title} align={TextAlign.CENTER} className={cls.text} />
       )}
     </div>
   )

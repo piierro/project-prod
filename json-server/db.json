@@ -39,7 +39,7 @@
           "type": "TEXT",
           "title": "Заголовок этого блока",
           "paragpaphs": [
-            "Любому пиздюлей бы дал<br>Язахотел и кеш поднял<br>Купилтачку-захртел<br>Tрахнул суку-захотел.<br>Без гандона-захотел<br>Захотел красиых тел тел тел тел"
+            "Концепция ЭДО и безбумажного офиса обрела широкую популярность десятилетия назад. Время от времени появлялись устройства, которые считались «предвестниками цифрового офиса будущего». Казалось, что вскоре многие организационные процессы и документооборот станут цифровыми. Однако реализация концепции безбумажного офиса потребовала значительно больше времени."
           ]
         },
         {
@@ -50,8 +50,8 @@
         {
           "id": 2,
           "type": "IMAGE",
-          "src": "https://memchik.ru//images/memes/60093f98b1c7e33ee44bcef2.jpg",
-          "title": "Кот в сапогах"
+          "src": "https://medialeaks.ru/wp-content/uploads/2017/09/breaking-news-6-600x338.jpg",
+          "title": "Кот"
         }
       ]
     }
@@ -82,13 +82,15 @@
       "id": "1",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://i.pinimg.com/236x/c8/cc/24/c8cc24bba37a25c009647b8875aae0e3.jpg"
     },
        {
       "id": "2",
       "username": "kuros",
       "password": "777",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://w7.pngwing.com/pngs/189/862/png-transparent-rage-comic-breakfast-cereal-anger-internet-meme-cereal-miscellaneous-monochrome-meme-thumbnail.png"
     }
   ],
   "profile": {
