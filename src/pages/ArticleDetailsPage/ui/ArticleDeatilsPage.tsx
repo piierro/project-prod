@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import * as cls from './ArticleDetailsPage.module.scss';
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { Text } from 'shared/ui/Text/Text';
@@ -20,6 +20,8 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { 
   fetchCommentsByArticleId 
 } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { AddCommentForm } from 'features/addCommentForm';
+import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
 
 interface ArticleDeatilsPageProps {
   className?: string
@@ -40,6 +42,10 @@ const ArticleDeatilsPage = ({ className }: ArticleDeatilsPageProps) => {
     dispatch(fetchCommentsByArticleId(id))
   },[dispatch, id])
 
+  const onSendComment = useCallback((text: string) => {
+    dispatch(addCommentForArticle(text))
+  }, [dispatch])
+
   if(!id) {
     return (
       <div className={classNames('', {}, [className])}>
@@ -52,6 +58,7 @@ const ArticleDeatilsPage = ({ className }: ArticleDeatilsPageProps) => {
       <div className={classNames('', {}, [className])}>
         <ArticleDetails id={id} />
         <Text title={'Комментарии'} className={cls.TexrComment} />
+        <AddCommentForm onSendComment={onSendComment}/>
         <CommentList isLoading={commentsIsloading} comments={comments}/>
       </div>
     </DynamicModuleLoader>

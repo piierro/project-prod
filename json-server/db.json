@@ -16,10 +16,12 @@
       "id": "1",
       "title": "News",
       "subtitle": "ВСЕГО ХОРОШЕГО! ИМХО",
-      "img":  "https://risovach.ru/upload/2014/12/mem/udivlyonnyy-kot_68573964_orig_.jpg",
+      "img": "https://risovach.ru/upload/2014/12/mem/udivlyonnyy-kot_68573964_orig_.jpg",
       "views": 1007,
       "createdAt": "13.09.2024",
-      "type": ["MEME"],
+      "type": [
+        "MEME"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -33,7 +35,7 @@
           "id": 4,
           "type": "CODE",
           "code": "interface ArticleImageBlockComponentProps {\nclassName?: string;block: ArticleImageBlock"
-        }, 
+        },
         {
           "id": 5,
           "type": "TEXT",
@@ -46,7 +48,7 @@
           "id": 3,
           "type": "CODE",
           "code": "<Button className={cls.copy}><Icon Svg={CopyIcon}/></Button>"
-        }, 
+        },
         {
           "id": 2,
           "type": "IMAGE",
@@ -55,7 +57,6 @@
         }
       ]
     }
-
   ],
   "comments": [
     {
@@ -70,11 +71,35 @@
       "articleId": "1",
       "userId": "1"
     },
-     {
+    {
       "id": "3",
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "   vkefevverv",
+      "id": "jhy8wo0"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Я ТУТ!!!",
+      "id": "qw9yzjC"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "ОДИН РАЗРАБ БУГАГАГАГА",
+      "id": "vcVvvRt"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "проверкак",
+      "id": "2F7ozV2"
     }
   ],
   "users": [
@@ -85,7 +110,7 @@
       "role": "USER",
       "avatar": "https://i.pinimg.com/236x/c8/cc/24/c8cc24bba37a25c009647b8875aae0e3.jpg"
     },
-       {
+    {
       "id": "2",
       "username": "kuros",
       "password": "777",
@@ -93,14 +118,28 @@
       "avatar": "https://w7.pngwing.com/pngs/189/862/png-transparent-rage-comic-breakfast-cereal-anger-internet-meme-cereal-miscellaneous-monochrome-meme-thumbnail.png"
     }
   ],
-  "profile": {
-    "first": "Kuros",
-    "lastName": "M",
-    "age": 23,
-    "currency": "EUR",
-    "country": "Korea",
-    "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://i.pinimg.com/236x/c8/cc/24/c8cc24bba37a25c009647b8875aae0e3.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Kuros",
+      "lastName": "M",
+      "age": 23,
+      "currency": "EUR",
+      "country": "Korea",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://i.pinimg.com/236x/c8/cc/24/c8cc24bba37a25c009647b8875aae0e3.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Kuro",
+      "lastName": "S",
+      "age": 5,
+      "currency": "EUR",
+      "country": "Japan",
+      "city": "Moscow",
+      "username": "kuros",
+      "avatar": "https://w7.pngwing.com/pngs/189/862/png-transparent-rage-comic-breakfast-cereal-anger-internet-meme-cereal-miscellaneous-monochrome-meme-thumbnail.png"
+    }
+  ]
 }

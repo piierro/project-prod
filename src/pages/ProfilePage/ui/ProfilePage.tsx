@@ -20,6 +20,7 @@ import { ProfileHeader } from './ProfileHeader/ProfileHeader';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useParams } from 'react-router-dom';
 // import * as cls from './ProfilePage.module.scss';
 
 const reducers: ReducersList = {
@@ -37,10 +38,13 @@ const ProfilePage = ({className}: PageLoaderProps) => {
   const isLoading = useSelector(getProfileIsLoading);
   const readonly = useSelector(getProfileRedonly);
   const validateErrors = useSelector(getValidateProfileErrors);
+  const { id } = useParams<{id: string}>();
 
   useEffect(() => {
-    dispatch(fetchProfileData())
-  }, [dispatch])
+    if (id) {
+      dispatch(fetchProfileData(id))
+    }
+  }, [dispatch, id])
 
   const onChangeFirstName = useCallback((value?: string) => {
     dispatch(profileActions.upDateProfile({first: value || ''}))
