@@ -19,6 +19,7 @@
       "img": "https://risovach.ru/upload/2014/12/mem/udivlyonnyy-kot_68573964_orig_.jpg",
       "views": 1007,
       "createdAt": "13.09.2024",
+      "userId": "1",
       "type": [
         "MEME"
       ],
@@ -54,6 +55,47 @@
           "type": "IMAGE",
           "src": "https://medialeaks.ru/wp-content/uploads/2017/09/breaking-news-6-600x338.jpg",
           "title": "Кот"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "КОТО ТУСА",
+      "subtitle": "ИМХО",
+      "img": "https://memepedia.ru/wp-content/uploads/2017/09/%D1%81%D1%80%D0%BE%D1%87%D0%BD%D1%8B%D0%B5-%D0%BD%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B8-%D1%81-%D0%BA%D0%BE%D1%88%D0%BA%D0%B0%D0%BC%D0%B8.jpg",
+      "views": 999,
+      "createdAt": "18.09.2024",
+      "userId": "2",
+      "type": [
+        "MEME"
+      ],
+      "blocks": [
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "ПАТИ ПАТИ ПАТИ ЕЕЕЕЕЙ",
+          "paragpaphs": [
+            "Здесь должен быть какой-то текст, но я не знаю что писать, поэтому тут будет мемы котов"
+          ]
+        },
+        {
+          "id": 4,
+          "type": "CODE",
+          "code": "<body><h1>Заголовок</h1><!-- Комментарий --><p>Первый абзац.</p><p>Второй абзац.</p></body>"
+        },
+        {
+          "id": 5,
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragpaphs": [
+            "Ко́шка — домашнее животное, одно из наиболее популярных «животных-компаньонов». С точки зрения научной систематики, домашняя кошка — млекопитающее семейства кошачьих отряда хищных. Одни исследователи рассматривают домашнюю кошку как подвид дикой кошки, другие — как отдельный биологический вид."
+          ]
+        },
+        {
+          "id": 2,
+          "type": "IMAGE",
+          "src": "https://htmlbook.ru/files/images/samhtml/fig_1_01_01.png",
+          "title": "КоД-LOL"
         }
       ]
     }
@@ -100,6 +142,12 @@
       "userId": "2",
       "text": "проверкак",
       "id": "2F7ozV2"
+    },
+    {
+      "articleId": "2",
+      "userId": "2",
+      "text": "где взять приглашение?",
+      "id": "0AWZ3-h"
     }
   ],
   "users": [

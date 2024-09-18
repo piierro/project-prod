@@ -104,7 +104,7 @@ export const ArticleDetails = memo(({className, id}: ArticleDetailsProps) => {
           size={TextSize.L}
         />
         <div className={cls.articleInfo}>
-          <Icon Svg={PreviewIcon}className={cls.icon} />
+          <Icon Svg={PreviewIcon} className={cls.icon} />
           <Text text={String(article?.views)} />
         </div>
         <div className={cls.articleInfo}>
