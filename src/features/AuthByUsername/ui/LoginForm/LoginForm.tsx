@@ -50,20 +50,23 @@ const LoginComponent = memo(({className, onSuccsess}: LoginFormProps) => {
   return (
     <DynamicModuleLoader reducers={initialReducers}>
       <div className={classNames(cls.LoginForm, {}, [className])}>
+        <div>
         <h2 className={cls.entrance}>Форма авторизации</h2>
-        {error && <Text text={error} theme={TextTheme.ERROR} />}
         <Input 
           type="text" 
           placeholder="Введите username"
           onChange={onChangeUserName}
           value={username}
+          className={cls.input}
         />
         <Input 
           type="text" 
           placeholder="Введите пароль"
           onChange={onChangePassword}
           value={password}
+          className={cls.input}
         />
+        {error && <Text text={error} theme={TextTheme.ERROR} />}
         <Button 
           className={cls.loginBtn} 
           onClick={onLoginClick}
@@ -72,6 +75,7 @@ const LoginComponent = memo(({className, onSuccsess}: LoginFormProps) => {
           Войти
         </Button>
       </div>
+    </div>
     </DynamicModuleLoader>
   )
 })
