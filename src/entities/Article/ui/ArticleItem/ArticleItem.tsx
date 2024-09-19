@@ -63,7 +63,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
             <Button 
               onClick={onOpenArticle} 
               theme={ThemeButton.BACKGGROUND_INVERTED}
-              >
+            >
               Читать далее...
             </Button>
             {views}

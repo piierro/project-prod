@@ -71,7 +71,7 @@
       ],
       "blocks": [
         {
-          "id": "2",
+          "id": "1",
           "type": "TEXT",
           "title": "ПАТИ ПАТИ ПАТИ ЕЕЕЕЕЙ",
           "paragpaphs": [
@@ -99,7 +99,7 @@
         }
       ]
     },
-      {
+    {
       "id": "3",
       "title": "HOOK USESTATE",
       "subtitle": "useState - это хук React, который позволяет вам добавить переменную состояния в ваш компонент.",
@@ -112,7 +112,7 @@
       ],
       "blocks": [
         {
-          "id": "3",
+          "id": "1",
           "type": "TEXT",
           "title": "useState",
           "paragpaphs": [
@@ -138,7 +138,343 @@
           "code": "import { useState } from 'react';\n\nfunction MyComponent() {  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  // ...\n}"
         },
         {
+          "id": 6,
+          "type": "TEXT",
+          "title": "Параметры",
+          "paragpaphs": [
+            "initialState: Значение, которое вы хотите, чтобы состояние было первоначальным. Это может быть значение любого типа, но для функций предусмотрено особое поведение. Этот аргумент игнорируется после первоначального рендеринга."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "HOOK USESTATE",
+      "subtitle": "useState - это хук React, который позволяет вам добавить переменную состояния в ваш компонент.",
+      "img": "https://ru.react.js.org/logo-og.png",
+      "views": 2005,
+      "createdAt": "19.09.2024",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "useState",
+          "paragpaphs": [
+            "..."
+          ]
+        },
+        {
+          "id": 4,
+          "type": "CODE",
+          "code": "const [state, setState] = useState(initialState);"
+        },
+        {
           "id": 5,
+          "type": "TEXT",
+          "title": "Описание",
+          "paragpaphs": [
+            "Вызовите useState на верхнем уровне вашего компонента, чтобы объявить переменную состояния."
+          ]
+        },
+        {
+          "id": 2,
+          "type": "CODE",
+          "code": "import { useState } from 'react';\n\nfunction MyComponent() {  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  // ...\n}"
+        },
+        {
+          "id": 6,
+          "type": "TEXT",
+          "title": "Параметры",
+          "paragpaphs": [
+            "initialState: Значение, которое вы хотите, чтобы состояние было первоначальным. Это может быть значение любого типа, но для функций предусмотрено особое поведение. Этот аргумент игнорируется после первоначального рендеринга."
+          ]
+        }
+      ]
+    },
+     {
+      "id": "5",
+      "title": "HOOK USESTATE",
+      "subtitle": "useState - это хук React, который позволяет вам добавить переменную состояния в ваш компонент.",
+      "img": "https://ru.react.js.org/logo-og.png",
+      "views": 2005,
+      "createdAt": "19.09.2024",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "useState",
+          "paragpaphs": [
+            "..."
+          ]
+        },
+        {
+          "id": 4,
+          "type": "CODE",
+          "code": "const [state, setState] = useState(initialState);"
+        },
+        {
+          "id": 5,
+          "type": "TEXT",
+          "title": "Описание",
+          "paragpaphs": [
+            "Вызовите useState на верхнем уровне вашего компонента, чтобы объявить переменную состояния."
+          ]
+        },
+        {
+          "id": 2,
+          "type": "CODE",
+          "code": "import { useState } from 'react';\n\nfunction MyComponent() {  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  // ...\n}"
+        },
+        {
+          "id": 6,
+          "type": "TEXT",
+          "title": "Параметры",
+          "paragpaphs": [
+            "initialState: Значение, которое вы хотите, чтобы состояние было первоначальным. Это может быть значение любого типа, но для функций предусмотрено особое поведение. Этот аргумент игнорируется после первоначального рендеринга."
+          ]
+        }
+      ]
+    },
+     {
+      "id": "6",
+      "title": "HOOK USESTATE",
+      "subtitle": "useState - это хук React, который позволяет вам добавить переменную состояния в ваш компонент.",
+      "img": "https://ru.react.js.org/logo-og.png",
+      "views": 2005,
+      "createdAt": "19.09.2024",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "useState",
+          "paragpaphs": [
+            "..."
+          ]
+        },
+        {
+          "id": 4,
+          "type": "CODE",
+          "code": "const [state, setState] = useState(initialState);"
+        },
+        {
+          "id": 5,
+          "type": "TEXT",
+          "title": "Описание",
+          "paragpaphs": [
+            "Вызовите useState на верхнем уровне вашего компонента, чтобы объявить переменную состояния."
+          ]
+        },
+        {
+          "id": 2,
+          "type": "CODE",
+          "code": "import { useState } from 'react';\n\nfunction MyComponent() {  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  // ...\n}"
+        },
+        {
+          "id": 6,
+          "type": "TEXT",
+          "title": "Параметры",
+          "paragpaphs": [
+            "initialState: Значение, которое вы хотите, чтобы состояние было первоначальным. Это может быть значение любого типа, но для функций предусмотрено особое поведение. Этот аргумент игнорируется после первоначального рендеринга."
+          ]
+        }
+      ]
+    },
+     {
+      "id": "7",
+      "title": "HOOK USESTATE",
+      "subtitle": "useState - это хук React, который позволяет вам добавить переменную состояния в ваш компонент.",
+      "img": "https://ru.react.js.org/logo-og.png",
+      "views": 2005,
+      "createdAt": "19.09.2024",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "useState",
+          "paragpaphs": [
+            "..."
+          ]
+        },
+        {
+          "id": 4,
+          "type": "CODE",
+          "code": "const [state, setState] = useState(initialState);"
+        },
+        {
+          "id": 5,
+          "type": "TEXT",
+          "title": "Описание",
+          "paragpaphs": [
+            "Вызовите useState на верхнем уровне вашего компонента, чтобы объявить переменную состояния."
+          ]
+        },
+        {
+          "id": 2,
+          "type": "CODE",
+          "code": "import { useState } from 'react';\n\nfunction MyComponent() {  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  // ...\n}"
+        },
+        {
+          "id": 6,
+          "type": "TEXT",
+          "title": "Параметры",
+          "paragpaphs": [
+            "initialState: Значение, которое вы хотите, чтобы состояние было первоначальным. Это может быть значение любого типа, но для функций предусмотрено особое поведение. Этот аргумент игнорируется после первоначального рендеринга."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "HOOK USESTATE",
+      "subtitle": "useState - это хук React, который позволяет вам добавить переменную состояния в ваш компонент.",
+      "img": "https://ru.react.js.org/logo-og.png",
+      "views": 2005,
+      "createdAt": "19.09.2024",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "useState",
+          "paragpaphs": [
+            "..."
+          ]
+        },
+        {
+          "id": 4,
+          "type": "CODE",
+          "code": "const [state, setState] = useState(initialState);"
+        },
+        {
+          "id": 5,
+          "type": "TEXT",
+          "title": "Описание",
+          "paragpaphs": [
+            "Вызовите useState на верхнем уровне вашего компонента, чтобы объявить переменную состояния."
+          ]
+        },
+        {
+          "id": 2,
+          "type": "CODE",
+          "code": "import { useState } from 'react';\n\nfunction MyComponent() {  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  // ...\n}"
+        },
+        {
+          "id": 6,
+          "type": "TEXT",
+          "title": "Параметры",
+          "paragpaphs": [
+            "initialState: Значение, которое вы хотите, чтобы состояние было первоначальным. Это может быть значение любого типа, но для функций предусмотрено особое поведение. Этот аргумент игнорируется после первоначального рендеринга."
+          ]
+        }
+      ]
+    },
+        {
+      "id": "9",
+      "title": "HOOK USESTATE",
+      "subtitle": "useState - это хук React, который позволяет вам добавить переменную состояния в ваш компонент.",
+      "img": "https://ru.react.js.org/logo-og.png",
+      "views": 2005,
+      "createdAt": "19.09.2024",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "useState",
+          "paragpaphs": [
+            "..."
+          ]
+        },
+        {
+          "id": 4,
+          "type": "CODE",
+          "code": "const [state, setState] = useState(initialState);"
+        },
+        {
+          "id": 5,
+          "type": "TEXT",
+          "title": "Описание",
+          "paragpaphs": [
+            "Вызовите useState на верхнем уровне вашего компонента, чтобы объявить переменную состояния."
+          ]
+        },
+        {
+          "id": 2,
+          "type": "CODE",
+          "code": "import { useState } from 'react';\n\nfunction MyComponent() {  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  // ...\n}"
+        },
+        {
+          "id": 6,
+          "type": "TEXT",
+          "title": "Параметры",
+          "paragpaphs": [
+            "initialState: Значение, которое вы хотите, чтобы состояние было первоначальным. Это может быть значение любого типа, но для функций предусмотрено особое поведение. Этот аргумент игнорируется после первоначального рендеринга."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "HOOK USESTATE",
+      "subtitle": "useState - это хук React, который позволяет вам добавить переменную состояния в ваш компонент.",
+      "img": "https://ru.react.js.org/logo-og.png",
+      "views": 2005,
+      "createdAt": "19.09.2024",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "useState",
+          "paragpaphs": [
+            "..."
+          ]
+        },
+        {
+          "id": 4,
+          "type": "CODE",
+          "code": "const [state, setState] = useState(initialState);"
+        },
+        {
+          "id": 5,
+          "type": "TEXT",
+          "title": "Описание",
+          "paragpaphs": [
+            "Вызовите useState на верхнем уровне вашего компонента, чтобы объявить переменную состояния."
+          ]
+        },
+        {
+          "id": 2,
+          "type": "CODE",
+          "code": "import { useState } from 'react';\n\nfunction MyComponent() {  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  // ...\n}"
+        },
+        {
+          "id": 6,
           "type": "TEXT",
           "title": "Параметры",
           "paragpaphs": [
