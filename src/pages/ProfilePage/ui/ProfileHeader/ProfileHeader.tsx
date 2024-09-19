@@ -4,8 +4,14 @@ import { memo, useCallback } from 'react';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
 import { useSelector } from 'react-redux';
-import { getProfileRedonly, profileActions, upDateProfileData } from 'entities/Profile';
+import { 
+  getProfileData, 
+  getProfileRedonly, 
+  profileActions, 
+  upDateProfileData 
+} from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getUserAuthData } from 'entities/User';
 
 
 interface ProfileHeaderProps {
@@ -14,6 +20,9 @@ interface ProfileHeaderProps {
 
 export const ProfileHeader = memo(({className}: ProfileHeaderProps) => {
   const readonly = useSelector(getProfileRedonly);
+  const authData = useSelector(getUserAuthData);
+  const profileData = useSelector(getProfileData);
+  const cancelEdit = authData?.id === profileData?.id;
   const dispatch = useAppDispatch();
 
   const onEdit = useCallback(() => {
@@ -31,33 +40,38 @@ export const ProfileHeader = memo(({className}: ProfileHeaderProps) => {
   return (
     <div className={classNames(cls.ProfileHeader, {}, [className])}>
       <Text title={'Профиль'}/>
-      {readonly 
-        ? 
-        (<Button 
-          theme={ThemeButton.BACKGGROUND_INVERTED}
-          className={cls.editBtn}
-          onClick={onEdit}
-        >
-          Редактировать
-        </Button>
-        )
-        : (
-          <>
-            <Button 
+      {cancelEdit && 
+        <div className={cls.btnWrapper}>
+          {readonly 
+            ? 
+            (<Button 
               theme={ThemeButton.BACKGGROUND_INVERTED}
               className={cls.editBtn}
-              onClick={onCancelEdit}
+              onClick={onEdit}
+          
             >
-              Отменить
+              Редактировать
             </Button>
-            <Button 
-              theme={ThemeButton.BACKGGROUND_INVERTED}
-              onClick={onSave}
-            >
-              Сохранить
-            </Button>
-          </>
-        )
+            )
+            : (
+              <>
+                <Button 
+                  theme={ThemeButton.BACKGGROUND_INVERTED}
+                  className={cls.editBtn}
+                  onClick={onCancelEdit}
+                >
+                  Отменить
+                </Button>
+                <Button 
+                  theme={ThemeButton.BACKGGROUND_INVERTED}
+                  onClick={onSave}
+                >
+                  Сохранить
+                </Button>
+              </>
+            )
+          }
+        </div>
       }
     </div>
   )

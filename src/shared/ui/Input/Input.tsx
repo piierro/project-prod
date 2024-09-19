@@ -11,11 +11,11 @@ interface InputProps extends HTMLInputProps {
     readonly?: boolean;
 }
 
-const InputComponent = memo((props: InputProps) => {
+export const Input = memo((props: InputProps) => {
 
   const {
     className,
-    value,
+    value = '',
     onChange,
     type = 'text',
     readonly,
@@ -43,7 +43,3 @@ const InputComponent = memo((props: InputProps) => {
     </div>
   )
 })
-
-InputComponent.displayName = 'InputComponent';
-
-export const Input = memo(InputComponent);

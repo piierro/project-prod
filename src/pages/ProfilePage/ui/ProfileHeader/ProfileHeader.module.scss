@@ -4,8 +4,11 @@
     width: 400px;
 
     .editBtn {
-       margin-left: auto;
        color: var(--inverted-primary-color);
         margin-right: 10px;
     }
+}
+
+.btnWrapper {
+    margin-left: auto;
 }
