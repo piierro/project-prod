@@ -48,7 +48,7 @@
         {
           "id": 3,
           "type": "CODE",
-          "code": "<Button className={cls.copy}><Icon Svg={CopyIcon}/></Button>"
+          "code": "<Button className={cls.copy}>\n<Icon Svg={CopyIcon}/>\n</Button>"
         },
         {
           "id": 2,
@@ -81,7 +81,7 @@
         {
           "id": 4,
           "type": "CODE",
-          "code": "<body><h1>Заголовок</h1><!-- Комментарий --><p>Первый абзац.</p><p>Второй абзац.</p></body>"
+          "code": "<body>\n  <h1>Заголовок</h1>\n  <!-- Комментарий -->\n  <p>Первый абзац.</p>\n  <p>Второй абзац.</p>\n</body>"
         },
         {
           "id": 5,
@@ -92,10 +92,58 @@
           ]
         },
         {
-          "id": 2,
+          "id": 3,
           "type": "IMAGE",
           "src": "https://htmlbook.ru/files/images/samhtml/fig_1_01_01.png",
           "title": "КоД-LOL"
+        }
+      ]
+    },
+      {
+      "id": "3",
+      "title": "HOOK USESTATE",
+      "subtitle": "useState - это хук React, который позволяет вам добавить переменную состояния в ваш компонент.",
+      "img": "https://ru.react.js.org/logo-og.png",
+      "views": 2005,
+      "createdAt": "19.09.2024",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "3",
+          "type": "TEXT",
+          "title": "useState",
+          "paragpaphs": [
+            "..."
+          ]
+        },
+        {
+          "id": 4,
+          "type": "CODE",
+          "code": "const [state, setState] = useState(initialState);"
+        },
+        {
+          "id": 5,
+          "type": "TEXT",
+          "title": "Описание",
+          "paragpaphs": [
+            "Вызовите useState на верхнем уровне вашего компонента, чтобы объявить переменную состояния."
+          ]
+        },
+        {
+          "id": 2,
+          "type": "CODE",
+          "code": "import { useState } from 'react';\n\nfunction MyComponent() {  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  const [age, setAge] = useState(28);\n  // ...\n}"
+        },
+        {
+          "id": 5,
+          "type": "TEXT",
+          "title": "Параметры",
+          "paragpaphs": [
+            "initialState: Значение, которое вы хотите, чтобы состояние было первоначальным. Это может быть значение любого типа, но для функций предусмотрено особое поведение. Этот аргумент игнорируется после первоначального рендеринга."
+          ]
         }
       ]
     }

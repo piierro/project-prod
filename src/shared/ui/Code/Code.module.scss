@@ -6,6 +6,12 @@
     overflow: auto;
 }
 
+code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    display: block;
+}
+
 .copy {
     position: absolute;
     top: 20px;

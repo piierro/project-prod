@@ -32,7 +32,8 @@ export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlo
 
 export enum ArticleType {
    "MEME" = "MEME",
-   "SCIENCE" = "SCIENCE"
+   "SCIENCE" = "SCIENCE",
+   "IT" = "IT"
 }
 
 export enum ArticleView {
