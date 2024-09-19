@@ -71,6 +71,7 @@
         width: 200px;
         height: 200px;
         object-fit: cover;
+        border-radius: 10px;
     }
 
     .infoWrapper {
@@ -88,7 +89,6 @@
 
     .views {
         margin-left: auto;
-        margin-right: 8px;
     }
 
     .title {

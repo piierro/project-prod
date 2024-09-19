@@ -7,7 +7,7 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import PreviewIcon from 'shared/assets/icons/preview.svg';
 import { Card } from 'shared/ui/Card/Card';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Button } from 'shared/ui/Button/Button';
+import { Button, SizeButton, ThemeButton } from 'shared/ui/Button/Button';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
@@ -60,7 +60,10 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
             <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
           )}
           <div className={cls.footer}>
-            <Button onClick={onOpenArticle}>
+            <Button 
+              onClick={onOpenArticle} 
+              theme={ThemeButton.BACKGGROUND_INVERTED}
+              >
               Читать далее...
             </Button>
             {views}

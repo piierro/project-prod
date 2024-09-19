@@ -63,7 +63,10 @@ const ArticleDeatilsPage = ({ className }: ArticleDeatilsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterAnMount>
       <div className={classNames('', {}, [className])}>
-        <Button onClick={onBackToList}>
+        <Button 
+          onClick={onBackToList}
+          className={cls.btn}
+          >
           Назад к списку
         </Button>
         <ArticleDetails id={id} />
