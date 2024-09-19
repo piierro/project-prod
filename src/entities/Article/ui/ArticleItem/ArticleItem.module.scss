@@ -5,11 +5,10 @@
 
     .header {
         display: flex;
-        align-items: center;
     }
 
     .username {
-        margin-left: 8px;
+        margin-left: 10px;
     }
 
     .data {
@@ -36,6 +35,10 @@
     .textBlock {
         max-height: 200px;
         overflow-y: hidden;
+    }
+
+    .views p {
+        margin-top: 1px;
     }
 }
 
@@ -89,6 +92,10 @@
 
     .views {
         margin-left: auto;
+    }
+
+    .views p {
+        margin-top: 1px;
     }
 
     .title {
