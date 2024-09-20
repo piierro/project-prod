@@ -2,12 +2,9 @@
     appearance: none;
     border: none;
     outline: none;
-    border-bottom: .2em solid var(--secondory-color);
-    background: rgba(#FB92AD, .2);
-    border-radius: .2em .2em 0 0;
-    padding: .4em;
-    color: var(--inverted-primary-color);
     width: 100%;
+    background: transparent;
+    color: var(--secondory-color);
 };
 
 .readonly {

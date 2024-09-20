@@ -37,6 +37,6 @@ export const getSidebarItems = createSelector(
           authOnly: true
         }
       )
-      return sidebarItemsList;
     }
+    return sidebarItemsList;
   })
