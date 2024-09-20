@@ -7,15 +7,18 @@ import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { ScrollSaveUISchema } from 'features/ScrollSaveUI';
 
 export interface StateSchema {
     user: UserSchema;
+    scrollSave: ScrollSaveUISchema;
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: ArticleDetailsCommentSchema;
     addCommentForm?: AddCommentFormSchema;
     articlesPage?: ArticlesPageSchema;
+
 }
 
 export type StateSchemaKey = keyof StateSchema;

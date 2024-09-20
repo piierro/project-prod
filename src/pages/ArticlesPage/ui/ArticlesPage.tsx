@@ -13,7 +13,7 @@ import {
   getArticlesPagesError, 
   getArticlesPagesView 
 } from '../model/selectors/articlesPageSelectors';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgetes/Page/Page';
 import { fetchNexrArticlePage } from '../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { Text } from 'shared/ui/Text/Text';
 import { fetchInitArticlesPage } from '../model/services/fetchInitArticlesPage/fetchInitArticlesPage';
