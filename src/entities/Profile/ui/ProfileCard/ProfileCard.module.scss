@@ -16,8 +16,8 @@
     border-radius: 50px;
     
     &:hover {
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
+        background: rgb(255 255 255 / 10%);
+        box-shadow: 4px 4px 60px 8px rgb(0 0 0 / 20%);
     }
 }
 
