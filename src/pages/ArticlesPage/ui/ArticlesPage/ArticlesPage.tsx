@@ -19,6 +19,7 @@ import { fetchNexrArticlePage } from '../../model/services/fetchNextArticlePage/
 import { Text } from 'shared/ui/Text/Text';
 import { fetchInitArticlesPage } from '../../model/services/fetchInitArticlesPage/fetchInitArticlesPage';
 import { ArticlesPageFilter } from '../ArticlesPageFiters/ArticlesPageFiters';
+import { useSearchParams } from 'react-router-dom';
 
 interface ArticlesPageProps {
   className?: string
@@ -34,19 +35,20 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   const isLoading = useSelector(getArticlesPageIsLoading);
   const error = useSelector(getArticlesPagesError);
   const view = useSelector(getArticlesPagesView);
+  const [searchParams] = useSearchParams()
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNexrArticlePage())
   }, [dispatch])
 
   useEffect(() => {
-    dispatch(fetchInitArticlesPage())
-  }, [dispatch])
+    dispatch(fetchInitArticlesPage(searchParams))
+  }, [dispatch, searchParams])
 
   if (error) {
     <Text title={'Страница не найдена'}/>
   }
-
+  
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterAnMount={false}>
       <Page onScrollEnd={onLoadNextPart} className={classNames('', {}, [className])}>

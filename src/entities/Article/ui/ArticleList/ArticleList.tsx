@@ -4,6 +4,7 @@ import { memo } from 'react';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleItem } from '../ArticleItem/ArticleItem';
 import { ArticleItemSkeleton } from '../ArticleItem/ArticleItemSkeleton';
+import { Text, TextSize } from 'shared/ui/Text/Text';
 
 interface ArticleListProps {
   className?: string;
@@ -36,6 +37,16 @@ export const ArticleList = memo((props: ArticleListProps) => {
       />
     )
   }
+
+
+  if (!isLoading && !articles.length) {
+    return (
+      <div className={classNames('', {}, [className, cls[view]])}>
+        <Text title={'Статьи не найдены'} size={TextSize.L}/>
+      </div>
+    )
+  }
+
 
   return (
     <div className={classNames('', {}, [className, cls[view]])}>
