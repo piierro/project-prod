@@ -25,6 +25,9 @@ export const ArticleTextBlockComponent = memo(({className, block}: ArticleTextBl
           className={cls.paragraph}
         />
       ))}
+      {block.img && (
+        <img src={block.img} className={cls.img} alt={block.title} />
+      )}
     </div>
   )
 })
