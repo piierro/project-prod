@@ -43,7 +43,3 @@ export const ArticleTypeTabs = memo(({ className, value, onChangeType }: Article
     />
   )
 })
-
-function debounceFetchData() {
-  throw new Error('Function not implemented.');
-}

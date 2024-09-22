@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import * as cls from './ArticleList.module.scss'
-import { memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleItem } from '../ArticleItem/ArticleItem';
 import { ArticleItemSkeleton } from '../ArticleItem/ArticleItemSkeleton';
@@ -11,9 +11,10 @@ interface ArticleListProps {
   articles: Article[];
   isLoading?: boolean;
   view?: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
-const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
+const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 8 : 4)
   .fill(0)
   .map((item, index) => (
     <ArticleItemSkeleton className={cls.card} key={index} view={view} />
@@ -24,7 +25,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
     className, 
     articles, 
     isLoading, 
-    view = ArticleView.SMALL 
+    view = ArticleView.SMALL,
+    target
   } = props;
 
   const renderArticle = (article: Article) => {
@@ -34,6 +36,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         view={view}
         className={cls.card}
         key={article.id}
+        target={target}
       />
     )
   }
