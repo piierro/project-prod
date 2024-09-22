@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import * as cls from './ArticleDetailsPage.module.scss';
 import { memo, useCallback, useEffect } from 'react';
 import { ArticleDetails, ArticleList } from 'entities/Article';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { CommentList } from 'entities/Comments';
 import { 
@@ -21,8 +21,6 @@ import {
 } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { AddCommentForm } from 'features/addCommentForm';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
-import { Button } from 'shared/ui/Button/Button';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgetes/Page/Page';
 import { getArticleReccomendation } from '../model/slices/ArticleDetailsRecomendation';
 import { getArticlesReccomendationIsLoading } from '../model/selectors/recommendation';
@@ -30,6 +28,7 @@ import {
   fetchArticleRecommendation
 } from '../model/services/fetchArticleRecommendation/fetchArticleRecommendation';
 import { articleDetailsPageReducer } from '../model/slices';
+import { ArticleDetailsPgeHeader } from './ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface ArticleDeatilsPageProps {
   className?: string;
@@ -48,7 +47,6 @@ const ArticleDeatilsPage = ({ className }: ArticleDeatilsPageProps) => {
   const reccomendationIsloading = useSelector(getArticlesReccomendationIsLoading);
   // const reccomendationsError = useSelector(getArticlesReccomendationsError);
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchCommentsByArticleId(id))
@@ -58,10 +56,6 @@ const ArticleDeatilsPage = ({ className }: ArticleDeatilsPageProps) => {
   const onSendComment = useCallback((text: string) => {
     dispatch(addCommentForArticle(text))
   }, [dispatch])
-
-  const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles)
-  }, [navigate])
 
   if(!id) {
     return (
@@ -73,12 +67,7 @@ const ArticleDeatilsPage = ({ className }: ArticleDeatilsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterAnMount>
       <Page className={classNames('', {}, [className])}>
-        <Button 
-          onClick={onBackToList}
-          className={cls.btn}
-        >
-          Назад к списку
-        </Button>
+        <ArticleDetailsPgeHeader />
         <ArticleDetails id={id} />
         <Text size={TextSize.L} title={'Рекомендации'} className={cls.TexrComment} />
         <ArticleList 

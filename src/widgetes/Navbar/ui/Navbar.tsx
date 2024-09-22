@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-
 import * as cls from './Navbar.module.scss';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { memo, useCallback, useState } from 'react';
@@ -30,7 +29,7 @@ export const Navbar = memo(({className}: NavbarProps) => {
 
   if(authDta) {
     return (
-      <div className={classNames(cls.Navbar, {}, [className])}>
+      <header className={classNames(cls.Navbar, {}, [className])}>
         <Button 
           theme={ThemeButton.CLEAR_INVERTED} 
           className={cls.links}
@@ -38,7 +37,7 @@ export const Navbar = memo(({className}: NavbarProps) => {
         >
           Выйти
         </Button>
-      </div>
+      </header>
     )
   }
 
