@@ -18,9 +18,7 @@ export const fetchNexrArticlePage = createAsyncThunk<void, void, ThunkConfig<str
 
     if (hasMore && !isLoading) {
       dispatch(articelPageActions.setPage(page + 1))
-      dispatch(fetchArticlesList({
-        page: page + 1
-      }))
+      dispatch(fetchArticlesList({}))
     }
   },
 );

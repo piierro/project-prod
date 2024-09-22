@@ -1,16 +1,15 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import * as cls from './ArticleDetailsPage.module.scss';
 import { memo, useCallback, useEffect } from 'react';
-import { ArticleDetails } from 'entities/Article';
-import { useNavigate, useParams } from 'react-router-dom';
-import { Text } from 'shared/ui/Text/Text';
+import { ArticleDetails, ArticleList } from 'entities/Article';
+import { useParams } from 'react-router-dom';
+import { Text, TextSize } from 'shared/ui/Text/Text';
 import { CommentList } from 'entities/Comments';
 import { 
   DynamicModuleLoader, ReducersList 
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useSelector } from 'react-redux';
 import { 
-  articleDetailsCommentsReducer, 
   getArticleComments 
 } from '../model/slices/ArticleDetailsCommentSlice';
 import { 
@@ -22,16 +21,21 @@ import {
 } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { AddCommentForm } from 'features/addCommentForm';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
-import { Button } from 'shared/ui/Button/Button';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgetes/Page/Page';
+import { getArticleReccomendation } from '../model/slices/ArticleDetailsRecomendation';
+import { getArticlesReccomendationIsLoading } from '../model/selectors/recommendation';
+import { 
+  fetchArticleRecommendation
+} from '../model/services/fetchArticleRecommendation/fetchArticleRecommendation';
+import { articleDetailsPageReducer } from '../model/slices';
+import { ArticleDetailsPgeHeader } from './ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface ArticleDeatilsPageProps {
-  className?: string
+  className?: string;
 }
 
 const reducers: ReducersList = {
-  articleDetailsComments: articleDetailsCommentsReducer
+  articleDetailsPage: articleDetailsPageReducer
 }
 
 const ArticleDeatilsPage = ({ className }: ArticleDeatilsPageProps) => {
@@ -39,20 +43,19 @@ const ArticleDeatilsPage = ({ className }: ArticleDeatilsPageProps) => {
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsloading = useSelector(getArticlesCommentsIsLoading);
   // const commentsError = useSelector(getArticlesCommentsError);
+  const reccomendation = useSelector(getArticleReccomendation.selectAll);
+  const reccomendationIsloading = useSelector(getArticlesReccomendationIsLoading);
+  // const reccomendationsError = useSelector(getArticlesReccomendationsError);
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchCommentsByArticleId(id))
+    dispatch(fetchArticleRecommendation())
   },[dispatch, id])
 
   const onSendComment = useCallback((text: string) => {
     dispatch(addCommentForArticle(text))
   }, [dispatch])
-
-  const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles)
-  }, [navigate])
 
   if(!id) {
     return (
@@ -64,14 +67,16 @@ const ArticleDeatilsPage = ({ className }: ArticleDeatilsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterAnMount>
       <Page className={classNames('', {}, [className])}>
-        <Button 
-          onClick={onBackToList}
-          className={cls.btn}
-        >
-          Назад к списку
-        </Button>
+        <ArticleDetailsPgeHeader />
         <ArticleDetails id={id} />
-        <Text title={'Комментарии'} className={cls.TexrComment} />
+        <Text size={TextSize.L} title={'Рекомендации'} className={cls.TexrComment} />
+        <ArticleList 
+          articles={reccomendation} 
+          isLoading={reccomendationIsloading} 
+          className={cls.reccomendation}
+          target="_blank"
+        />
+        <Text size={TextSize.L} title={'Комментарии'} className={cls.TexrComment} />
         <AddCommentForm onSendComment={onSendComment}/>
         <CommentList isLoading={commentsIsloading} comments={comments}/>
       </Page>
