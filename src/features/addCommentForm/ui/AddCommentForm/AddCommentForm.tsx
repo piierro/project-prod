@@ -11,6 +11,7 @@ import { addCommentFormSActions, addCommentFormSReducer } from '../../model/slic
 import { useSelector } from 'react-redux';
 import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { HStack } from 'shared/ui/Stack';
 
 export interface AddCommentFormProps {
   className?: string;
@@ -37,7 +38,12 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.AddCommentForm, {}, [className])}>
+      <HStack
+        max 
+        align='center' 
+        justify="between" 
+        className={classNames(cls.AddCommentForm, {}, [className])}
+      >
         <Input
           placeholder="Введите текст комментария"
           value={text}
@@ -49,7 +55,7 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
         >
           Отправить
         </Button>
-      </div>
+      </HStack>
     </DynamicModuleLoader>
   );
 })
