@@ -7,6 +7,7 @@ import BurgerMenu from 'shared/assets/icons/menu.svg'
 import { SidebarItem } from '../../SidebarItem/SidebarItem';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from 'widgetes/Sidebar/model/selectors/getSidebarItems';
+import { WStack } from 'shared/ui/Stack/WStack/WStack';
 
 interface SidebarProps {
   className?: string 
@@ -42,10 +43,10 @@ export const Sidebar = memo(({className}: SidebarProps) => {
       >
         {collapsed ? <BurgerMenu /> : '<'}
       </Button>
-      <div className={cls.items}>
+      <WStack gap="8" className={cls.items}>
         <span className={cls.hr}></span>
         {itemList}
-      </div>
+      </WStack>
       <div className={cls.switchers}>
         <ThemeSwitcher />
       </div>

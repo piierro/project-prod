@@ -29,6 +29,7 @@ import {
 } from '../model/services/fetchArticleRecommendation/fetchArticleRecommendation';
 import { articleDetailsPageReducer } from '../model/slices';
 import { ArticleDetailsPgeHeader } from './ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { WStack } from 'shared/ui/Stack';
 
 interface ArticleDeatilsPageProps {
   className?: string;
@@ -67,18 +68,20 @@ const ArticleDeatilsPage = ({ className }: ArticleDeatilsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterAnMount>
       <Page className={classNames('', {}, [className])}>
-        <ArticleDetailsPgeHeader />
-        <ArticleDetails id={id} />
-        <Text size={TextSize.L} title={'Рекомендации'} className={cls.TexrComment} />
-        <ArticleList 
-          articles={reccomendation} 
-          isLoading={reccomendationIsloading} 
-          className={cls.reccomendation}
-          target="_blank"
-        />
-        <Text size={TextSize.L} title={'Комментарии'} className={cls.TexrComment} />
-        <AddCommentForm onSendComment={onSendComment}/>
-        <CommentList isLoading={commentsIsloading} comments={comments}/>
+        <WStack gap='16' max>
+          <ArticleDetailsPgeHeader />
+          <ArticleDetails id={id} />
+          <Text size={TextSize.L} title={'Рекомендации'} className={cls.TexrComment} />
+          <ArticleList 
+            articles={reccomendation} 
+            isLoading={reccomendationIsloading} 
+            className={cls.reccomendation}
+            target="_blank"
+          />
+          <Text size={TextSize.L} title={'Комментарии'} className={cls.TexrComment} />
+          <AddCommentForm onSendComment={onSendComment}/>
+          <CommentList isLoading={commentsIsloading} comments={comments}/>
+        </WStack>
       </Page>
     </DynamicModuleLoader>
   )

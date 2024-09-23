@@ -22,6 +22,7 @@ import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useParams } from 'react-router-dom';
 import { Page } from 'widgetes/Page/Page';
+import { WStack } from 'shared/ui/Stack';
 // import * as cls from './ProfilePage.module.scss';
 
 const reducers: ReducersList = {
@@ -87,28 +88,30 @@ const ProfilePage = ({className}: PageLoaderProps) => {
   return (
     <DynamicModuleLoader reducers={reducers}  removeAfterAnMount>
       <Page className={classNames('', {}, [className])}>
-        <ProfileHeader />
-        {validateErrors?.length && validateErrors.map(err => (
-          <Text 
-            key={err}
-            theme={TextTheme.ERROR} 
-            text={err} 
+        <WStack gap="16">
+          <ProfileHeader />
+          {validateErrors?.length && validateErrors.map(err => (
+            <Text 
+              key={err}
+              theme={TextTheme.ERROR} 
+              text={err} 
+            />
+          ))}
+          <ProfileCard 
+            data={formData}
+            isLoading={isLoading}
+            error={error}
+            readonly={readonly}
+            onChangeFirstName={onChangeFirstName}
+            onChangeLastName={onChangeLastName}
+            onChangeAge={onChangeAge}
+            onChangeCity={onChangeCity}
+            onChangeUserName={onChangeUserName}
+            onChangeAvatar={onChangeAvatar}
+            onChangeCurrency={onChangeCurrency}
+            onChangeCountry={onChangeCountry}
           />
-        ))}
-        <ProfileCard 
-          data={formData}
-          isLoading={isLoading}
-          error={error}
-          readonly={readonly}
-          onChangeFirstName={onChangeFirstName}
-          onChangeLastName={onChangeLastName}
-          onChangeAge={onChangeAge}
-          onChangeCity={onChangeCity}
-          onChangeUserName={onChangeUserName}
-          onChangeAvatar={onChangeAvatar}
-          onChangeCurrency={onChangeCurrency}
-          onChangeCountry={onChangeCountry}
-        />
+        </WStack>
       </Page>
     </DynamicModuleLoader>
   )

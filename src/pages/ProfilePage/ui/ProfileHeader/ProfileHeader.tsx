@@ -12,7 +12,7 @@ import {
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
-
+import { HStack } from 'shared/ui/Stack';
 
 interface ProfileHeaderProps {
   className?: string;
@@ -38,7 +38,7 @@ export const ProfileHeader = memo(({className}: ProfileHeaderProps) => {
   }, [dispatch])
 
   return (
-    <div className={classNames(cls.ProfileHeader, {}, [className])}>
+    <HStack justify={'between'} className={classNames(cls.ProfileHeader, {}, [className])}>
       <Text title={'Профиль'}/>
       {cancelEdit && 
         <div className={cls.btnWrapper}>
@@ -73,6 +73,6 @@ export const ProfileHeader = memo(({className}: ProfileHeaderProps) => {
           }
         </div>
       }
-    </div>
+    </HStack>
   )
 })

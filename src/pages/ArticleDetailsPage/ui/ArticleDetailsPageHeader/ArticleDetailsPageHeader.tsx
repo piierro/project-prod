@@ -7,6 +7,7 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { useSelector } from 'react-redux';
 import { getArticleDetailsData } from 'entities/Article';
 import { getCanEditArticle } from '../../model/selectors/articel';
+import { HStack } from 'shared/ui/Stack';
 
 interface ArticleDetailsPgeHeaderProps {
   className?: string;
@@ -26,7 +27,7 @@ export const ArticleDetailsPgeHeader = memo(({ className }: ArticleDetailsPgeHea
   }, [navigate, article?.id])
 
   return (
-    <div className={classNames(cls.ArticleDetailsPgeHeader, {}, [className])}>
+    <HStack align='center' className={classNames('', {}, [className])}>
       <Button 
         onClick={onBackToList}
         className={cls.btn}
@@ -41,6 +42,6 @@ export const ArticleDetailsPgeHeader = memo(({ className }: ArticleDetailsPgeHea
           Редактировать
         </Button>
       )}
-    </div>
+    </HStack>
   )
 })

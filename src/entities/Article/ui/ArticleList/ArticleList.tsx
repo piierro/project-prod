@@ -16,7 +16,7 @@ interface ArticleListProps {
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 8 : 4)
   .fill(0)
-  .map((item, index) => (
+  .map((_, index) => (
     <ArticleItemSkeleton className={cls.card} key={index} view={view} />
   ));
 

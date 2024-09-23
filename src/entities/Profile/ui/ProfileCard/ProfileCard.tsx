@@ -7,6 +7,7 @@ import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
+import { HStack, WStack } from 'shared/ui/Stack';
 
 interface ProfileCardProps {
     className?: string;
@@ -43,22 +44,22 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   if(isLoading) {
     return (
-      <div className={classNames(cls.ProfileCard, {[cls.loading]: true}, [className])}>
+      <HStack justify={"center"} className={classNames(cls.ProfileCard, {[cls.loading]: true}, [className])}>
         <Loader />
-      </div>
+      </HStack>
     )
   }
 
   if(error) {
     return (
-      <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+      <HStack justify={"center"} className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
         <Text
           theme={TextTheme.ERROR}
           title={'Произошла ошибка при загрузке профиля'}
           text={'Попробуйте обновить страницу'}
           align={TextAlign.CENTER}
         />
-      </div>
+      </HStack>
     )
   }
 
@@ -67,70 +68,68 @@ export const ProfileCard = (props: ProfileCardProps) => {
   }
 
   return (
-    <div className={classNames(cls.ProfileCard, mods, [className])}>
-      <div>
-        {data?.avatar && (
-          <div className={cls.avatarWrapper}>
-            <Avatar src={data.avatar} />
-          </div>
-        )}
-        <Input
-          value={data?.avatar} 
-          placeholder='Ссылка на аватарку'
-          className={cls.input}
-          onChange={onChangeAvatar}
-          readonly={readonly}
-          key="webpages:Enabled"
-        />
-        <Input
-          value={data?.username} 
-          placeholder='Имя пользователя'
-          className={cls.input}
-          onChange={onChangeUserName}
-          readonly={readonly}
-        />
-        <Input
-          value={data?.first} 
-          placeholder='Имя'
-          className={cls.input}
-          onChange={onChangeFirstName}
-          readonly={readonly}
-        />
-        <Input
-          value={data?.lastName} 
-          placeholder='Фамилия'
-          className={cls.input}
-          onChange={onChangeLastName}
-          readonly={readonly}
-        />
-        <Input
-          type="text" 
-          value={data?.age} 
-          placeholder='Возраст'
-          className={cls.input}
-          onChange={onChangeAge}
-          readonly={readonly}
-        />
-        <Input
-          value={data?.city} 
-          placeholder='Город'
-          className={cls.input}
-          onChange={onChangeCity}
-          readonly={readonly}
-        />
-        <CurrencySelect 
-          className={cls.input}
-          value={data?.currency}
-          onChange={onChangeCurrency}
-          readonly={readonly}
-        />
-        <CountrySelect
-          className={cls.input}
-          value={data?.country}
-          onChange={onChangeCountry}
-          readonly={readonly}
-        />
-      </div>
-    </div>
+    <WStack gap="16" max className={classNames(cls.ProfileCard, mods, [className])}>
+      {data?.avatar && (
+        <HStack max justify={"center"} >
+          <Avatar src={data.avatar} />
+        </HStack>
+      )}
+      <Input
+        value={data?.avatar} 
+        placeholder='Ссылка на аватарку'
+        className={cls.input}
+        onChange={onChangeAvatar}
+        readonly={readonly}
+        key="webpages:Enabled"
+      />
+      <Input
+        value={data?.username} 
+        placeholder='Имя пользователя'
+        className={cls.input}
+        onChange={onChangeUserName}
+        readonly={readonly}
+      />
+      <Input
+        value={data?.first} 
+        placeholder='Имя'
+        className={cls.input}
+        onChange={onChangeFirstName}
+        readonly={readonly}
+      />
+      <Input
+        value={data?.lastName} 
+        placeholder='Фамилия'
+        className={cls.input}
+        onChange={onChangeLastName}
+        readonly={readonly}
+      />
+      <Input
+        type="text" 
+        value={data?.age} 
+        placeholder='Возраст'
+        className={cls.input}
+        onChange={onChangeAge}
+        readonly={readonly}
+      />
+      <Input
+        value={data?.city} 
+        placeholder='Город'
+        className={cls.input}
+        onChange={onChangeCity}
+        readonly={readonly}
+      />
+      <CurrencySelect 
+        className={cls.input}
+        value={data?.currency}
+        onChange={onChangeCurrency}
+        readonly={readonly}
+      />
+      <CountrySelect
+        className={cls.input}
+        value={data?.country}
+        onChange={onChangeCountry}
+        readonly={readonly}
+      />
+    </WStack>
   )
 }
