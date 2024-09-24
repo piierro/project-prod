@@ -4,14 +4,13 @@ import * as cls from './BoxList.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from '../Button/Button';
 import { HStack } from '../Stack';
+import { DropDownDirection } from 'shared/types/ui';
 
 export interface BoxListItem {
   value: string;
   content: ReactNode;
   disabled?: boolean
 }
-
-type DropDownDirection = 'top'| 'bottom';
 
 interface BoxListProps {
   items?: BoxListItem[];
@@ -25,8 +24,10 @@ interface BoxListProps {
 }
 
 const mapDirectionClass: Record<DropDownDirection, string> = {
-  bottom: cls.optionsBottom,
-  top: cls.optiosnTop
+  'bottom left': cls.optionsBottomLeft,
+  'bottom right': cls.optionsBottomRight,
+  'top left': cls.optionsTopLeft,
+  'top right': cls.optionsTopRight
 }
 
 export function BoxList(props: BoxListProps) {
@@ -38,7 +39,7 @@ export function BoxList(props: BoxListProps) {
     label,
     onChange,
     readonly,
-    direction = 'bottom',
+    direction = 'bottom left',
   } = props;
 
   const optionsClasses = [mapDirectionClass[direction]];

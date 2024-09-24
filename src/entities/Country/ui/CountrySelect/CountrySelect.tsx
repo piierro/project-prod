@@ -30,7 +30,7 @@ export const CountrySelect = memo(({className, value, onChange, readonly}: Count
       items={options}
       defaultValue={'Укажите страну'}
       readonly={readonly}
-      direction='top'
+      direction='top right'
     />
   )
 })

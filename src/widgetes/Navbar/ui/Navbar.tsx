@@ -5,6 +5,9 @@ import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 interface NavbarProps {
   className?: string 
@@ -30,13 +33,21 @@ export const Navbar = memo(({className}: NavbarProps) => {
   if(authDta) {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
-        <Button 
-          theme={ThemeButton.CLEAR_INVERTED} 
-          className={cls.links}
-          onClick={onLogout}
-        >
-          Выйти
-        </Button>
+        <Dropdown
+          direction={'bottom left'}
+          className={cls.dropdown}
+          items={[
+            {
+              content: 'Профиль',
+              href: RoutePath.profile + authDta.id
+            },
+            {
+              content: 'Выйти',
+              onClick: onLogout
+            }
+          ]} 
+          trigger={<Avatar size={40} src={authDta.avatar} />}
+        />
       </header>
     )
   }
