@@ -1,0 +1,44 @@
+.BoxList {
+  position: relative;
+}
+
+.trigger {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.options {
+   position: absolute;
+   background: var(--list-box);
+   z-index: 1000;
+   border-radius: 0.5rem;
+
+   &:focus {
+    outline: none;
+   }
+}
+
+.item {
+  padding: 10px 20px;
+  border-radius: 0.5rem;
+}
+
+.focus {
+  background: var(--inverted-bg-color);
+  color: var(--inverted-primary-color);
+}
+
+.disabled {
+  opacity: 0.6;
+}
+
+.optiosnTop {
+  bottom: 100%;
+}
+
+.optionsBottom {
+  cursor: pointer;
+}

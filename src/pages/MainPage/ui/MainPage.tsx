@@ -1,6 +1,10 @@
+import { Page } from 'widgetes/Page/Page';
+
 const MainPage = () => {
   return (
-    <div>MainPage</div>
+    <Page>
+      <div></div>
+    </Page>
   )
 }
 

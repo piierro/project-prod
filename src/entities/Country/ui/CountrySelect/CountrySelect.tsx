@@ -1,7 +1,6 @@
 import { Country } from 'entities/Country';
 import { memo, useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Select } from 'shared/ui/Select/Select';
+import { BoxList } from 'shared/ui/BoxList/BoxList';
 
 interface CountrySelectProps {
     className?: string;
@@ -23,13 +22,15 @@ export const CountrySelect = memo(({className, value, onChange, readonly}: Count
   }, [onChange])
 
   return (
-    <Select 
-      className={classNames('', {}, [className])}
-      label={'Укажите страну'}
-      options={options}
+    <BoxList
+      //  className={classNames('', {}, [className])}
       value={value}
+      label={'Укажите страну'}
       onChange={onChangeHandler}
+      items={options}
+      defaultValue={'Укажите страну'}
       readonly={readonly}
+      direction='top'
     />
   )
 })

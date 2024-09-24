@@ -30,7 +30,7 @@ export const Sidebar = memo(({className}: SidebarProps) => {
   )), [collapsed, sidebarItemsList]);
   
   return (
-    <menu 
+    <aside 
       data-testid="sidebar"
       className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}>
       <Button 
@@ -43,13 +43,13 @@ export const Sidebar = memo(({className}: SidebarProps) => {
       >
         {collapsed ? <BurgerMenu /> : '<'}
       </Button>
-      <WStack gap="8" className={cls.items}>
+      <WStack role='navigation' gap="8" className={cls.items}>
         <span className={cls.hr}></span>
         {itemList}
       </WStack>
       <div className={cls.switchers}>
         <ThemeSwitcher />
       </div>
-    </menu>
+    </aside>
   )
 })
