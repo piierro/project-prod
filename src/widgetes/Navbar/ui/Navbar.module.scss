@@ -1,10 +1,17 @@
 .Navbar {
-    width: 100%;
-    display: flex;
-    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
 }
 
-.links {
+.links,
+.dropdown {
     text-decoration: none;
     margin-left: auto;
+}
+
+.dropdown {
+    padding: 10px 15px;
+    margin: 25px;
 }

@@ -1,7 +1,6 @@
 import { Currency } from 'entities/Currency';
 import { memo, useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Select } from 'shared/ui/Select/Select';
+import { BoxList } from 'shared/ui/BoxList/BoxList';
 
 interface CurrencySelectProps {
     className?: string;
@@ -16,19 +15,21 @@ const options = [
   {value: Currency.USD, content: Currency.USD}
 ]
 
-export const CurrencySelect = memo(({className, value, onChange, readonly}: CurrencySelectProps) => {
+export const CurrencySelect = memo(({value, onChange, readonly}: CurrencySelectProps) => {
   const onChangeHandler = useCallback((value: string) => {
     onChange?.(value as Currency)
   }, [onChange])
 
   return (
-    <Select 
-      className={classNames('', {}, [className])}
-      label={'Укажите валюту'}
-      options={options}
+    <BoxList
+      //  className={classNames('', {}, [className])}
       value={value}
+      label={'Укажите валюту'}
       onChange={onChangeHandler}
+      items={options}
+      defaultValue={'Укажите валюту'}
       readonly={readonly}
+      direction='top right'
     />
   )
 })

@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 import * as cls from './AppLink.module.scss';
 import { Link, LinkProps } from 'react-router-dom';
-import { ReactNode, memo } from 'react';
+import { ReactNode, forwardRef, memo } from 'react';
 
 export enum AppLinkTheme {
     PRIPARY = 'primary',
@@ -15,7 +15,7 @@ interface AppLinkProps extends LinkProps {
     theme?: AppLinkTheme;
 }
 
-export const AppLink = memo((props: AppLinkProps) => {
+export const AppLink = memo(forwardRef<HTMLAnchorElement, AppLinkProps>((props, ref) => {
   const { 
     to,
     className,
@@ -27,11 +27,12 @@ export const AppLink = memo((props: AppLinkProps) => {
     
   return (
     <Link 
-      to={to} 
+      to={to}
+      ref={ref}
       className={classNames(cls.AppLink, {}, [className, cls[theme]])}
       {...otherProps}
     >
       {children}
     </Link>
   )
-})
+}))
