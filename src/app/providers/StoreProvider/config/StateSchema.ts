@@ -1,6 +1,5 @@
 import { UserSchema } from 'entities/User';
 import { AnyAction, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
-import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ArticleDetailsSchema } from 'entities/Article';
@@ -8,16 +7,19 @@ import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollSaveUISchema } from 'features/ScrollSaveUI';
+import { rtkApi } from 'shared/api/rtkApi';
+import { ProfileSchema } from 'features/editableProfileCard';
 
 export interface StateSchema {
     user: UserSchema;
     scrollSave: ScrollSaveUISchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
     addCommentForm?: AddCommentFormSchema;
     articlesPage?: ArticlesPageSchema;
-    articleDetailsPage?: ArticleDetailsPageSchema
+    articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

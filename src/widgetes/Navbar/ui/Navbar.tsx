@@ -5,7 +5,7 @@ import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
-import Dropdown from 'shared/ui/Dropdown/Dropdown';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
@@ -34,6 +34,7 @@ export const Navbar = memo(({className}: NavbarProps) => {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
         <Dropdown
+          trigger={<Avatar size={50} src={authDta.avatar} />}
           direction={'bottom left'}
           className={cls.dropdown}
           items={[
@@ -46,7 +47,6 @@ export const Navbar = memo(({className}: NavbarProps) => {
               onClick: onLogout
             }
           ]} 
-          trigger={<Avatar size={40} src={authDta.avatar} />}
         />
       </header>
     )

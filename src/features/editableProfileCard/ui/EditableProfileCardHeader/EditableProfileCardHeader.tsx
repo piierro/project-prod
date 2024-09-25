@@ -1,24 +1,22 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import * as cls from './ProfileHeader.module.scss';
+import * as cls from './EditableProfileCardHeader.module.scss';
 import { memo, useCallback } from 'react';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
-import { Text } from 'shared/ui/Text/Text';
-import { useSelector } from 'react-redux';
-import { 
-  getProfileData, 
-  getProfileRedonly, 
-  profileActions, 
-  upDateProfileData 
-} from 'entities/Profile';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+import { getProfileRedonly } from '../..//model/selectors/getProfileReadonly/getProfileReadonly';
+import { upDateProfileData } from '../..//model/services/upDateProfileData/upDateProfileData';
+import { profileActions } from '../../model/slice/ProfileSlice';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { HStack } from 'shared/ui/Stack';
+import { Text } from 'shared/ui/Text/Text';
 
-interface ProfileHeaderProps {
+interface EditableProfileCardHeaderProps {
   className?: string;
 }
 
-export const ProfileHeader = memo(({className}: ProfileHeaderProps) => {
+export const EditableProfileCardHeader = memo(({ className }: EditableProfileCardHeaderProps) => {
   const readonly = useSelector(getProfileRedonly);
   const authData = useSelector(getUserAuthData);
   const profileData = useSelector(getProfileData);
@@ -44,9 +42,9 @@ export const ProfileHeader = memo(({className}: ProfileHeaderProps) => {
         <div className={cls.btnWrapper}>
           {readonly 
             ? 
-            (<Button 
-              theme={ThemeButton.BACKGGROUND_INVERTED}
+            (<Button
               className={cls.editBtn}
+              theme={ThemeButton.BACKGGROUND_INVERTED}
               onClick={onEdit}
           
             >
@@ -57,8 +55,8 @@ export const ProfileHeader = memo(({className}: ProfileHeaderProps) => {
               <>
                 <Button 
                   theme={ThemeButton.BACKGGROUND_INVERTED}
-                  className={cls.editBtn}
                   onClick={onCancelEdit}
+                  className={cls.editBtn}
                 >
                   Отменить
                 </Button>
