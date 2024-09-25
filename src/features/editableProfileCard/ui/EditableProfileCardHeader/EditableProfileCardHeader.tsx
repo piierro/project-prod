@@ -1,4 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
+import * as cls from './EditableProfileCardHeader.module.scss';
 import { memo, useCallback } from 'react';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { getUserAuthData } from 'entities/User';
@@ -35,13 +36,14 @@ export const EditableProfileCardHeader = memo(({ className }: EditableProfileCar
   }, [dispatch])
 
   return (
-    <HStack justify={'between'} className={classNames('', {}, [className])}>
+    <HStack justify={'between'} className={classNames(cls.ProfileHeader, {}, [className])}>
       <Text title={'Профиль'}/>
       {cancelEdit && 
-        <div>
+        <div className={cls.btnWrapper}>
           {readonly 
             ? 
-            (<Button 
+            (<Button
+              className={cls.editBtn}
               theme={ThemeButton.BACKGGROUND_INVERTED}
               onClick={onEdit}
           
@@ -54,6 +56,7 @@ export const EditableProfileCardHeader = memo(({ className }: EditableProfileCar
                 <Button 
                   theme={ThemeButton.BACKGGROUND_INVERTED}
                   onClick={onCancelEdit}
+                  className={cls.editBtn}
                 >
                   Отменить
                 </Button>
@@ -71,17 +74,3 @@ export const EditableProfileCardHeader = memo(({ className }: EditableProfileCar
     </HStack>
   )
 })
-
-// .ProfileHeader {
-//     margin: 40px 0 20px;
-//     width: 500px;
-
-//     .editBtn {
-//        color: var(--inverted-bg-color);
-//         margin-right: 10px;
-//     }
-// }
-
-// .btnWrapper {
-//     margin-left: auto;
-// }

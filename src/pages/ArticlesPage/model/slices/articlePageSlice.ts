@@ -25,7 +25,7 @@ const articelPageSlice = createSlice({
     page: 1,
     hasMore: true,
     _inited: false,
-    limit: 8,
+    limit: 5,
     order: 'asc',
     sort: ArticleSortField.VIEWS,
     search: '',
