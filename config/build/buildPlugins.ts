@@ -24,7 +24,7 @@ export function buildPlugins(
     })
   ];
 
-  // plugins.push(new BundleAnalyzerPlugin({openAnalyzer: false}))
+  // plugins.push(new BundleAnalyzerPlugin({openAnalyzer: true}))
 
   if(isDev) {
     plugins.push(new webpack.HotModuleReplacementPlugin());

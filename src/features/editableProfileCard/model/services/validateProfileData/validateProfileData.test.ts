@@ -1,5 +1,5 @@
+import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 import { validateProfileData } from './validateProgileData';
-import { ValidateProfileError } from '../../types/profile';
 
 const data = {
   first: "Kuros",

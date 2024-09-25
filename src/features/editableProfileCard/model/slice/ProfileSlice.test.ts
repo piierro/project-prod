@@ -1,4 +1,4 @@
-import { ProfileSchema } from '../types/profile';
+import { ProfileSchema } from '../types/editableProfileCardSchema';
 import { profileActions, profileReducer } from './ProfileSlice';
 
 // const data = {
