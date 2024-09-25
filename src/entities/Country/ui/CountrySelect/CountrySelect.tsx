@@ -16,7 +16,7 @@ const options = [
   {value: Country.Russia, content: Country.Russia}
 ]
 
-export const CountrySelect = memo(({className, value, onChange, readonly}: CountrySelectProps) => {
+export const CountrySelect = memo(({ value, onChange, readonly}: CountrySelectProps) => {
   const onChangeHandler = useCallback((value: string) => {
     onChange?.(value as Country)
   }, [onChange])

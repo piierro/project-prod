@@ -16,7 +16,7 @@ export default tseslint.config (
   rules: eslintReactHooks.configs.recommended.rules,
   },
   {
-    ignores: ['node_modules', 'build'],
+    ignores: ['node_modules', 'build', 'json-server'],
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,

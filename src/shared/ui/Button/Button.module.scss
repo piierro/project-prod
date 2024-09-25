@@ -53,26 +53,6 @@
     border: none;
 }
 
-.selectBtn {
-    width: 100%;
-    border-radius: 0.5rem;
-    background: transparent;
-    padding: 8px 16px;
-    border: none;
-    border-left: 1px solid var(--secondory-color);
-    border-top: 1px solid var(--secondory-color);
-    color: var(--secondory-color);
-
-    &:focus {
-        outline: none;
-    }
-
-  &:hover {
-      background: rgb(255 255 255 / 10%);
-      box-shadow: 4px 4px 60px 8px rgb(0 0 0 / 20%);
-  }
-}
-
 .square {
     padding: 0;
 }

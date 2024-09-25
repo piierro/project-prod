@@ -5,7 +5,7 @@ import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import Dropdown from 'shared/ui/Dropdown/Dropdown';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 

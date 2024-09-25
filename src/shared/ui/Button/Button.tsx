@@ -8,7 +8,6 @@ export enum ThemeButton {
   ERROR = 'error',
   BACKGGROUND = 'background',
   BACKGGROUND_INVERTED = 'backgroundInverted',
-  SELECT_BTN = 'selectBtn'
 }
 
 export enum SizeButton {

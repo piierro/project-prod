@@ -2,7 +2,6 @@ import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headless
 import { Fragment, ReactNode } from 'react'
 import * as cls from './BoxList.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ThemeButton } from '../Button/Button';
 import { HStack } from '../Stack';
 import { DropDownDirection } from 'shared/types/ui';
 
@@ -55,9 +54,7 @@ export function BoxList(props: BoxListProps) {
         className={classNames(cls.BoxList, {}, [className])}
       >
         <ListboxButton disabled={readonly} className={cls.trigger}>
-          <Button disabled={readonly} theme={ThemeButton.SELECT_BTN}>
-            {value ?? defaultValue}
-          </Button>
+          {value ?? defaultValue}
         </ListboxButton>
         <ListboxOptions className={classNames(cls.options, {}, optionsClasses)}>
           {items?.map((item) => (
@@ -81,5 +78,4 @@ export function BoxList(props: BoxListProps) {
       </Listbox>
     </HStack>
   );
-
 }
