@@ -5,7 +5,7 @@ import { Article } from '../../model/types/article';
 import { ArticleItem } from '../ArticleItem/ArticleItem';
 import { ArticleItemSkeleton } from '../ArticleItem/ArticleItemSkeleton';
 import { Text, TextSize } from 'shared/ui/Text/Text';
-import { ArticleView } from 'entities/Article';
+import { ArticleView } from '../../model/consts/articleConsts';
 
 interface ArticleListProps {
   className?: string;

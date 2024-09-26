@@ -1,4 +1,4 @@
-import { Country } from 'entities/Country';
+import { Country } from '../../model/types/country';
 import { memo, useCallback } from 'react';
 import { BoxList } from 'shared/ui/BoxList/BoxList';
 

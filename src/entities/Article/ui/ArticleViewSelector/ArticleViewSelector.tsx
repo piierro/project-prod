@@ -5,7 +5,7 @@ import ListIcon from 'shared/assets/icons/list.svg';
 import TilesIcon from 'shared/assets/icons/plitka.svg';
 import { Button } from 'shared/ui/Button/Button';
 import { Icon } from 'shared/ui/Icon/Icon';
-import { ArticleView } from 'entities/Article';
+import { ArticleView } from '../../model/consts/articleConsts';
 
 interface ArticleViewSelectorProps {
   className?: string;
