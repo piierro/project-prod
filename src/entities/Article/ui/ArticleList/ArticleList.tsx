@@ -26,7 +26,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     articles, 
     isLoading, 
     view = ArticleView.SMALL,
-    target
+    target,
   } = props;
 
   const renderArticle = (article: Article) => {

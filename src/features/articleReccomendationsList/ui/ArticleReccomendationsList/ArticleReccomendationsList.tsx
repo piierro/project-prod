@@ -13,7 +13,7 @@ interface ArticleReccomendationsListProps {
 export const ArticleReccomendationsList = memo(({ className }: ArticleReccomendationsListProps) => {
   const {data: articles, isLoading, error} = useArticleReccomendationsList(5);
 
-  if(isLoading || error) {
+  if(isLoading || error || !articles) {
     return null
   }
 
