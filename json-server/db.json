@@ -599,6 +599,13 @@
       "avatar": "https://i.pinimg.com/236x/c8/cc/24/c8cc24bba37a25c009647b8875aae0e3.jpg"
     },
     {
+      "id": "1",
+      "username": "ypu",
+      "password": "123",
+      "roles": ["USER"],
+      "avatar": "https://i.pinimg.com/236x/c8/cc/24/c8cc24bba37a25c009647b8875aae0e3.jpg"
+    },
+    {
       "id": "2",
       "username": "kuros",
       "password": "777",

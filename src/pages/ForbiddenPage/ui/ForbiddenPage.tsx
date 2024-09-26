@@ -1,9 +1,16 @@
+import { Text, TextAlign, TextSize, TextTheme } from 'shared/ui/Text/Text';
 import { Page } from 'widgetes/Page/Page';
+import * as cls from './ForbiddenPage.module.scss';
 
 const ForbiddenPage = () => {
   return (
-    <Page>
-      У вас нет доступа к этой странице
+    <Page className={cls.forbidden}>
+      <Text 
+        title='Доступ запрещен' 
+        align={TextAlign.CENTER}
+        theme={TextTheme.ERROR}
+        size={TextSize.L}
+      />
     </Page>
   )
 }
