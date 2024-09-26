@@ -51,14 +51,14 @@ const config: Config = {
   ],
 
   reporters: [
-  "default",
-  ["jest-html-reporters", {
-    "publicPath": "<rootDir>/reports/unit",
-    "filename": "report.html",
-    "openReport": true,
-    "inlineSource": true
-  }]
-]
+    "default",
+    ["jest-html-reporters", {
+      "publicPath": "<rootDir>/reports/unit",
+      "filename": "report.html",
+      // "openReport": true,
+      "inlineSource": true
+    }]
+  ]
 };
 
 export default config;
