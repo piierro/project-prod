@@ -3,10 +3,13 @@ export {
   userActions
 } from './model/slice/userSlice';
 
-export { 
+export  { 
+  UserRoles
+} from './model/consts/userConsts';
+
+export type {
   User,
   UserSchema,
-  UserRoles
 } from './model/types/user';
 
 export { getUserAuthData } from './model/selectors/getUserAuthData/getUserAuthData';

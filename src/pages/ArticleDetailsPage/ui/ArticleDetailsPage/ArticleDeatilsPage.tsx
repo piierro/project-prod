@@ -23,13 +23,6 @@ const reducers: ReducersList = {
 const ArticleDeatilsPage = ({ className }: ArticleDeatilsPageProps) => {
   const { id } = useParams<{id: string}>();
 
-  if(!id) {
-    return (
-      <Page className={classNames('', {}, [className])}>
-        Статья не найдена
-      </Page>
-    )
-  }
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterAnMount>
       <Page className={classNames('', {}, [className])}>
