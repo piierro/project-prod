@@ -19,15 +19,16 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import DataIcon from 'shared/assets/icons/data.svg';
 import PreviewIcon from 'shared/assets/icons/preview.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { HStack, WStack } from 'shared/ui/Stack';
+import { ArticleBlockType } from 'entities/Article/model/consts/articleConsts';
 
 interface ArticleDetailsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 const reducers: ReducersList = {

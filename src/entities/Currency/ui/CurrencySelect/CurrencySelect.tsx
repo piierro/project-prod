@@ -1,4 +1,5 @@
-import { Currency } from 'entities/Currency';
+
+import { Currency } from '../../model/types/currency';
 import { memo, useCallback } from 'react';
 import { BoxList } from 'shared/ui/BoxList/BoxList';
 
