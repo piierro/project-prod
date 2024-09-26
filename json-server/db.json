@@ -593,16 +593,30 @@
   "users": [
     {
       "id": "1",
-      "username": "user",
+      "username": "user123",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
+      "avatar": "https://i.pinimg.com/236x/c8/cc/24/c8cc24bba37a25c009647b8875aae0e3.jpg"
+    },
+    {
+      "id": "1",
+      "username": "ypu",
+      "password": "123",
+      "roles": ["USER"],
       "avatar": "https://i.pinimg.com/236x/c8/cc/24/c8cc24bba37a25c009647b8875aae0e3.jpg"
     },
     {
       "id": "2",
       "username": "kuros",
       "password": "777",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
+      "avatar": "https://sun9-33.userapi.com/impg/JOZp_Q56GaXoxGie_jCooQyf7kT1Du5D0UVinQ/SIAs1hwSoWY.jpg?size=604x604&quality=96&sign=15ac6e5f64afaa38dacbfb42242bb239&type=album"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "777",
+      "roles": ["MANAGER"],
       "avatar": "https://sun9-33.userapi.com/impg/JOZp_Q56GaXoxGie_jCooQyf7kT1Du5D0UVinQ/SIAs1hwSoWY.jpg?size=604x604&quality=96&sign=15ac6e5f64afaa38dacbfb42242bb239&type=album"
     }
   ],

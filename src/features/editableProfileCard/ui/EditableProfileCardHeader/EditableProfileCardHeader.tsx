@@ -57,12 +57,14 @@ export const EditableProfileCardHeader = memo(({ className }: EditableProfileCar
                   theme={ThemeButton.BACKGGROUND_INVERTED}
                   onClick={onCancelEdit}
                   className={cls.editBtn}
+                  data-testid={'EditableProfileCardHeader.CancelBtn'}
                 >
                   Отменить
                 </Button>
                 <Button 
                   theme={ThemeButton.BACKGGROUND_INVERTED}
                   onClick={onSave}
+                  data-testid={'EditableProfileCardHeader.SaveBtn'}
                 >
                   Сохранить
                 </Button>
