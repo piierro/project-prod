@@ -16,21 +16,21 @@ export const NotificationList = memo(({ className }: NotificationListProps) => {
   });
 
   if(isLoading) {
-     return (
+    return (
       <WStack gap="16" className={classNames(cls.NotificationList, {}, [className])}>
-         <Skeleton width={'100%'} border={'15px'} height={'50px'}/>
-         <Skeleton width={'100%'} border={'15px'} height={'50px'}/>
-         <Skeleton width={'100%'} border={'15px'} height={'50px'}/>
+        <Skeleton width={'100%'} border={'15px'} height={'50px'}/>
+        <Skeleton width={'100%'} border={'15px'} height={'50px'}/>
+        <Skeleton width={'100%'} border={'15px'} height={'50px'}/>
       </WStack>
-     )
+    )
   }
 
   return (
     <WStack gap="8" className={classNames(cls.NotificationList, {}, [className])}>
       {data?.map(item => (
         <NotificationItem 
-           key={item.id}
-           item={item}
+          key={item.id}
+          item={item}
         />
       ))}
     </WStack>
