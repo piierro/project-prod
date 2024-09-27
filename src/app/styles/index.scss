@@ -4,7 +4,8 @@
 @import "reset";
 
 .App,
-.App_modal {
+.App_modal,
+.App_drawer {
     color: var(--primary-color);
     font-size: var(--font-m);
 }
