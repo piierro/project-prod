@@ -1,9 +1,10 @@
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import * as cls from'./Modal.module.scss'
-import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { ReactNode } from 'react';
 import { Portal } from '../Portal/Portal';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { Overlay } from '../Overlay/Overlay';
+import { useModal } from 'shared/lib/hooks/useModal/useModal';
 
 interface ModalProps {
   className?: string;
@@ -24,47 +25,17 @@ export const Modal = (props: ModalProps) => {
     lazy
   } = props
 
-  const [isClosing, setIsClosing] = useState(false);
-  const [isMounted, setisMounted] = useState(false);
-  const timeRef = useRef<ReturnType<typeof setTimeout>>();
   const { theme } = useTheme();
-
-  useEffect(() => {
-    if(isOpen) {
-      setisMounted(true)
-    }
-  }, [isOpen])
+  const { 
+    close,
+    isClosing,
+    isMounted
+  } = useModal({animationDelay: ANIMATION_DELAY, onClose, isOpen})
 
   const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing
   }
-
-  const closeHandler = useCallback(() => {
-    if(onClose) {
-      setIsClosing(true);
-      timeRef.current = setTimeout(() => {
-        onClose();
-        setIsClosing(false);
-      }, ANIMATION_DELAY)
-    }
-  }, [onClose])
-
-  const onKeyDown = useCallback((e: KeyboardEvent) =>{
-    if(e.key === 'Escape') {
-      closeHandler()
-    }
-  }, [closeHandler])
-
-  useEffect(() => {
-    if(isOpen) {
-      window.addEventListener('keydown', onKeyDown)
-    }
-    return () => {
-      clearTimeout(timeRef.current);
-      window.removeEventListener('keydown', onKeyDown)
-    }
-  }, [isOpen, onKeyDown])
 
   if(lazy && !isMounted) {
     return null;
@@ -73,7 +44,7 @@ export const Modal = (props: ModalProps) => {
   return (
     <Portal>
       <div className={classNames(cls.Modal, mods, [className, theme, 'App_modal'])}>
-        <Overlay onClick={closeHandler} />
+        <Overlay onClick={close} />
         <div className={cls.content}>
           {children}
         </div>
