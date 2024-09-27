@@ -11,10 +11,11 @@
     cursor: pointer;
 }
 
-.focus {
-    background: var(--inverted-bg-color);
-    color: var(--inverted-primary-color);
+.focus,
+.focus:hover {
+    background: var(--card-bg);
 }
+
 
 .optionsBottomLeft {
     top: 100%;

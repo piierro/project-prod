@@ -5,7 +5,8 @@ import { HTMLAttributes, ReactNode, memo } from 'react';
 
 export enum CardTheme {
     NORMAL = 'normal',
-    OUTLINED = 'outlined'
+    OUTLINED = 'outlined',
+    CLEAR = 'clear'
 }
 
 interface CardProps extends HTMLAttributes<HTMLDivElement>{

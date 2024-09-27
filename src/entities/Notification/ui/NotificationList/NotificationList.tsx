@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import * as cls from './NotificationList.module.scss'
 import { memo } from 'react';
 import { useNotifications } from '../../api/notidicationApi';
-import { WStack } from 'shared/ui/Stack';
+import { HStack, WStack } from 'shared/ui/Stack';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 
@@ -17,16 +17,16 @@ export const NotificationList = memo(({ className }: NotificationListProps) => {
 
   if(isLoading) {
     return (
-      <WStack gap="16" className={classNames(cls.NotificationList, {}, [className])}>
+      <HStack gap="16" className={classNames(cls.NotificationList, {}, [className])}>
         <Skeleton width={'100%'} border={'15px'} height={'50px'}/>
         <Skeleton width={'100%'} border={'15px'} height={'50px'}/>
         <Skeleton width={'100%'} border={'15px'} height={'50px'}/>
-      </WStack>
+      </HStack>
     )
   }
 
   return (
-    <WStack gap="8" className={classNames(cls.NotificationList, {}, [className])}>
+    <WStack gap="16" className={classNames(cls.NotificationList, {}, [className])}>
       {data?.map(item => (
         <NotificationItem 
           key={item.id}
