@@ -2,8 +2,10 @@ import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headless
 import { Fragment, ReactNode } from 'react'
 import * as cls from './BoxList.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
-import { HStack } from '../Stack';
+import { HStack } from '../../../Stack';
 import { DropDownDirection } from 'shared/types/ui';
+import { mapDirectionClass } from '../../styles/consts';
+import * as popupCls from '../../styles/popup.module.scss'
 
 export interface BoxListItem {
   value: string;
@@ -20,13 +22,6 @@ interface BoxListProps {
   onChange: <T extends string>(value: T) => void;
   readonly?: boolean;
   direction?: DropDownDirection;
-}
-
-const mapDirectionClass: Record<DropDownDirection, string> = {
-  'bottom left': cls.optionsBottomLeft,
-  'bottom right': cls.optionsBottomRight,
-  'top left': cls.optionsTopLeft,
-  'top right': cls.optionsTopRight
 }
 
 export function BoxList(props: BoxListProps) {
@@ -51,7 +46,7 @@ export function BoxList(props: BoxListProps) {
         value={value} 
         onChange={onChange}
         disabled={readonly}
-        className={classNames(cls.BoxList, {}, [className])}
+        className={classNames('', {}, [className, popupCls.popup])}
       >
         <ListboxButton disabled={readonly} className={cls.trigger}>
           {value ?? defaultValue}
@@ -66,7 +61,9 @@ export function BoxList(props: BoxListProps) {
             >
               {({ focus, selected }) => (
                 <li
-                  className={classNames(cls.item, { [cls.focus]: focus, [cls.disabled]: item.disabled })}
+                  className={classNames(cls.item, { 
+                    [popupCls.focus]: focus, [popupCls.disabled]: item.disabled 
+                  })}
                 >
                   {selected && '>'}
                   {item.content}

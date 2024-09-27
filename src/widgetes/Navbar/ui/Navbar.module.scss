@@ -6,12 +6,23 @@
 }
 
 .links,
-.dropdown {
+.actions {
     text-decoration: none;
     margin-left: auto;
 }
 
 .dropdown {
-    padding: 10px 15px;
+    padding: 10px 10px 0 0;
     margin: 25px;
+}
+
+.icon {
+    margin-top: 50px;
+}
+
+.notifications {
+    min-height: 150px;
+    max-height: 200px;
+    width: 400px;
+    overflow-y: auto;
 }

@@ -1,0 +1,13 @@
+.panel {
+    position: absolute;
+    background: transparent;
+    z-index: 1000;
+    border-radius: 0.5rem 0 0.5rem 0.5rem;
+    border: 1px solid var(--secondory-color);
+    color: var(--secondory-color);
+    padding: 15px;
+        
+    &:focus {
+        outline: none;
+    }
+}
