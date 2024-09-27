@@ -1,13 +1,35 @@
 {
-  "posts": [
+  "notifications": [
     {
       "id": "1",
-      "title": "json-server",
-      "userId": 1
+      "title": "Уведомление",
+      "desctiption": "Исправить баг с инпутами",
+      "userId": 2,
+      "href": "http://localhost:3000/admin"
     },
     {
       "id": "2",
-      "title": "json-server",
+      "title": "Уведомление",
+      "desctiption": "Исправить верстку статей",
+      "userId": 2,
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "3",
+      "title": "Уведомление",
+      "desctiption": "Добро пожаловать!",
+      "userId": 1
+    },
+    {
+      "id": "4",
+      "title": "Уведомление",
+      "desctiption": "!",
+      "userId": 2
+    },
+    {
+      "id": "5",
+      "title": "Уведомление",
+      "desctiption": "Happy New Year!!!",
       "userId": 2
     }
   ],

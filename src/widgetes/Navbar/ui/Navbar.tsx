@@ -3,11 +3,11 @@ import * as cls from './Navbar.module.scss';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
-import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User';
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'entities/User';
+import { HStack } from 'shared/ui/Stack';
+import { NotificationButton } from 'features/notificationButton';
+import { AvatarDropdown } from 'features/avatarDropdown';
 
 interface NavbarProps {
   className?: string 
@@ -16,9 +16,6 @@ interface NavbarProps {
 export const Navbar = memo(({className}: NavbarProps) => {
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authDta = useSelector(getUserAuthData);
-  const dispatch = useDispatch();
-  const isAdmin = useSelector(isUserAdmin);
-  const isManager = useSelector(isUserManager);
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false)
@@ -28,34 +25,13 @@ export const Navbar = memo(({className}: NavbarProps) => {
     setIsAuthModal(true)
   }, [])
 
-  const onLogout = useCallback(() => {
-    dispatch(userActions.logout())
-  }, [dispatch])
-
-  const isAdminPanel = isAdmin || isManager;
-
   if(authDta) {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
-        <Dropdown
-          trigger={<Avatar size={50} src={authDta.avatar} />}
-          direction={'bottom left'}
-          className={cls.dropdown}
-          items={[
-            {
-              content: 'Профиль',
-              href: RoutePath.profile + authDta.id
-            },
-            ...(isAdminPanel ? [{
-              content: 'Админка',
-              href: RoutePath.admin_panel
-            }]: []),
-            {
-              content: 'Выйти',
-              onClick: onLogout
-            }
-          ]} 
-        />
+        <HStack className={cls.actions}>
+          <NotificationButton />
+          <AvatarDropdown />
+        </HStack>
       </header>
     )
   }
