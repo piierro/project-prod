@@ -1,11 +1,11 @@
 import { memo, useCallback, useEffect } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import * as cls from './ArticleDetails.module.scss';
 import { 
   DynamicModuleLoader, ReducersList 
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import { useSelector } from 'react-redux';
 import { 
@@ -13,18 +13,18 @@ import {
   getArticleDetailsError, 
   getArticleDetailsIsLoading 
 } from '../../model/selectors/articleDetails';
-import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import DataIcon from 'shared/assets/icons/data.svg';
-import PreviewIcon from 'shared/assets/icons/preview.svg';
-import { Icon } from 'shared/ui/Icon/Icon';
+import { Text, TextAlign, TextSize } from '@/shared/ui/Text/Text';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import DataIcon from '@/shared/assets/icons/data.svg';
+import PreviewIcon from '@/shared/assets/icons/preview.svg';
+import { Icon } from '@/shared/ui/Icon/Icon';
 import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { HStack, WStack } from 'shared/ui/Stack';
-import { ArticleBlockType } from 'entities/Article/model/consts/articleConsts';
+import { HStack, WStack } from '@/shared/ui/Stack';
+import { ArticleBlockType } from '@/entities/Article/model/consts/articleConsts';
 
 interface ArticleDetailsProps {
     className?: string;

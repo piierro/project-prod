@@ -31,10 +31,12 @@
 .size_s {
   .title {
     font-size: var(--font-size-m);
+    margin-bottom: 8px;
   }
 
   .text {
     font-size: var(--font-size-s);
+    opacity: 0.8;
   }
 }
 

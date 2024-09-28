@@ -1,17 +1,17 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo, useCallback, useEffect } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
+import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import { 
   ProfileCard
-} from 'entities/Profile';
+} from '@/entities/Profile';
 import { 
   DynamicModuleLoader, 
   ReducersList 
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { profileActions, profileReducer } from '../..//model/slice/ProfileSlice';
 import { getProfileError } from '../..//model/selectors/getProfileError/getProfileError';
@@ -22,7 +22,7 @@ import {
 } from '../..//model/selectors/getValidateProfileErrors/getValidateProfileErrors';
 import { fetchProfileData } from '../..//model/services/fetchProfileData/fetchProfileData';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
-import { WStack } from 'shared/ui/Stack';
+import { WStack } from '@/shared/ui/Stack';
 
 interface EditableProfileCardProps {
   className?: string;

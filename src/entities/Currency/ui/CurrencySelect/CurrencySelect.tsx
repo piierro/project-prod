@@ -1,7 +1,7 @@
 
 import { Currency } from '../../model/types/currency';
 import { memo, useCallback } from 'react';
-import { BoxList } from 'shared/ui/Popups/ui/BoxList/BoxList';
+import { BoxList } from '@/shared/ui/Popups/ui/BoxList/BoxList';
 
 interface CurrencySelectProps {
     className?: string;

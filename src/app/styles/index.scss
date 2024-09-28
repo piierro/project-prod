@@ -4,7 +4,8 @@
 @import "reset";
 
 .App,
-.App_modal {
+.App_modal,
+.App_drawer {
     color: var(--primary-color);
     font-size: var(--font-m);
 }
@@ -26,8 +27,7 @@
 
 *::-webkit-scrollbar-track {
     background: var(--bg-color);
-
-    /* цвет зоны отслеживания */
+    border-radius: 10px;
 }
 
 *::-webkit-scrollbar-thumb {

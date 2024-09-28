@@ -1,12 +1,11 @@
 .menu {
     position: absolute;
-    background: transparent;
+    background: var(--card-bg);
     z-index: 1000;
     border-radius: 0.5rem 0 0.5rem 0.5rem;
-    border: 1px solid var(--secondory-color);
-    color: var(--secondory-color);
     flex-direction: column;
     display: flex;
+    color: var(--primary-color);
 
     &:focus {
         outline: none;
@@ -14,12 +13,12 @@
 }
 
 .item {
-    padding: 10px 20px;
+    padding: 15px 20px;
     width: 100%;
     border-radius: 0.5rem 0 0.5rem 0.5rem;
     background: none;
     border: none;
     outline: none;
-    color: var(--secondory-color);
+    color: var(--primary-color);
     cursor: pointer;
 }

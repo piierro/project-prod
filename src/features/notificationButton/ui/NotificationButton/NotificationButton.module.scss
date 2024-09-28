@@ -1,8 +1,9 @@
 .notifications {
     min-height: 150px;
     max-height: 200px;
-    width: 400px;
+    width: 300px;
     overflow-y: auto;
+    display: block;
 }
 
 .icon {

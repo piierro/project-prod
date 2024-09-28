@@ -1,10 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import * as cls from './ArticleList.module.scss'
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { Article } from '../../model/types/article';
 import { ArticleItem } from '../ArticleItem/ArticleItem';
 import { ArticleItemSkeleton } from '../ArticleItem/ArticleItemSkeleton';
-import { Text, TextSize } from 'shared/ui/Text/Text';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { ArticleView } from '../../model/consts/articleConsts';
 
 interface ArticleListProps {

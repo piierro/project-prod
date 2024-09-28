@@ -1,7 +1,7 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import * as cls from './NotFound.module.scss';
-import { Page } from 'widgetes/Page/Page';
+import { Page } from '@/widgetes/Page/Page';
 
 interface NotFoundProps {
     className?: string 

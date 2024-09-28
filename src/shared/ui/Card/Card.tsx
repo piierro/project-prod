@@ -1,11 +1,12 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import * as cls from './Card.module.scss'
 import { HTMLAttributes, ReactNode, memo } from 'react';
 
 
 export enum CardTheme {
     NORMAL = 'normal',
-    OUTLINED = 'outlined'
+    OUTLINED = 'outlined',
+    CLEAR = 'clear'
 }
 
 interface CardProps extends HTMLAttributes<HTMLDivElement>{

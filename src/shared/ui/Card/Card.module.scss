@@ -11,3 +11,11 @@
        border: 0.1px solid var(--primary-color);
        border-radius: 10px;
 }
+
+.clear {
+       background: none;
+}
+
+.clear:hover {
+       background-color: var(--card-bg);
+}

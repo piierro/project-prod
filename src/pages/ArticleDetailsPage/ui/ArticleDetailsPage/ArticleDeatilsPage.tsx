@@ -1,15 +1,15 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails } from '@/entities/Article';
 import { useParams } from 'react-router-dom';
 import { 
   DynamicModuleLoader, ReducersList 
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Page } from 'widgetes/Page/Page';
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Page } from '@/widgetes/Page/Page';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPgeHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import { WStack } from 'shared/ui/Stack';
-import { ArticleReccomendationsList } from 'features/articleReccomendationsList';
+import { WStack } from '@/shared/ui/Stack';
+import { ArticleReccomendationsList } from '@/features/articleReccomendationsList';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 
 interface ArticleDeatilsPageProps {
