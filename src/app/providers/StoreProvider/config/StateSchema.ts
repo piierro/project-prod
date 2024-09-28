@@ -1,14 +1,14 @@
-import { UserSchema } from 'entities/User';
+import { UserSchema } from '@/entities/User';
 import { AnyAction, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { LoginSchema } from 'features/AuthByUsername';
-import { ArticleDetailsSchema } from 'entities/Article';
-import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
-import { AddCommentFormSchema } from 'features/addCommentForm';
-import { ArticlesPageSchema } from 'pages/ArticlesPage';
-import { ScrollSaveUISchema } from 'features/ScrollSaveUI';
-import { rtkApi } from 'shared/api/rtkApi';
-import { ProfileSchema } from 'features/editableProfileCard';
+import { LoginSchema } from '@/features/AuthByUsername';
+import { ArticleDetailsSchema } from '@/entities/Article';
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
+import { AddCommentFormSchema } from '@/features/addCommentForm';
+import { ArticlesPageSchema } from '@/pages/ArticlesPage';
+import { ScrollSaveUISchema } from '@/features/ScrollSaveUI';
+import { rtkApi } from '@/shared/api/rtkApi';
+import { ProfileSchema } from '@/features/editableProfileCard';
 
 export interface StateSchema {
     user: UserSchema;

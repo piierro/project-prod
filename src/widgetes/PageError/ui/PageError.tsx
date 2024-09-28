@@ -1,6 +1,6 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import * as cls from './PageError.module.scss';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button, ThemeButton } from '@/shared/ui/Button/Button';
 
 interface PageErrorProps {
     className?: string 

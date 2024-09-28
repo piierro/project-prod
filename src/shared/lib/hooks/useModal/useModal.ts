@@ -1,4 +1,4 @@
-import { useTheme } from 'app/providers/ThemeProvider';
+import { useTheme } from '@/app/providers/ThemeProvider';
 import { useState, useRef, useEffect, useCallback } from 'react';
 
 interface UseModalProps {

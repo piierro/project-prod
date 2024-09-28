@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import * as cls from './ArticleTypeTabs.module.scss';
 import { memo, useCallback, useMemo } from 'react';
-import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs';
+import { AppLink } from '@/shared/ui/AppLink/AppLink';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { ArticleType } from '../../model/consts/articleConsts';
 
 interface ArticleTypeTabsProps {

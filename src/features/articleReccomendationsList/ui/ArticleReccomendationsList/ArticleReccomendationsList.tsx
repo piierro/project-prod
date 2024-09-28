@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 // import * as cls from './ArticleReccomendationsList.module.scss'
 import { memo } from 'react';
-import { Text, TextSize } from 'shared/ui/Text/Text';
-import { ArticleList } from 'entities/Article';
-import { WStack } from 'shared/ui/Stack';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { ArticleList } from '@/entities/Article';
+import { WStack } from '@/shared/ui/Stack';
 import { useArticleReccomendationsList } from '../../api/articleReccomendationsApi';
 
 interface ArticleReccomendationsListProps {

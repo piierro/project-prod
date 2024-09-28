@@ -1,5 +1,5 @@
 import { loginByUsername } from './loginByUserName';
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
 describe('loginByUsername', () => {
   //  let dispatch: Dispatch;

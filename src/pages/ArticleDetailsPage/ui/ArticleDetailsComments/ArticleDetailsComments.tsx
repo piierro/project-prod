@@ -1,17 +1,17 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo, useCallback, useEffect } from 'react';
-import { Text, TextSize } from 'shared/ui/Text/Text';
-import { AddCommentForm } from 'features/addCommentForm';
-import { CommentList } from 'entities/Comments';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { AddCommentForm } from '@/features/addCommentForm';
+import { CommentList } from '@/entities/Comments';
 import { useSelector } from 'react-redux';
 import { getArticleComments } from '../../model/slices/ArticleDetailsCommentSlice';
 import { getArticlesCommentsIsLoading } from '../../model/selectors/comments';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { 
   fetchCommentsByArticleId
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { WStack } from 'shared/ui/Stack';
+import { WStack } from '@/shared/ui/Stack';
 
 interface ArticleDetailsCommentsProps {
   className?: string;

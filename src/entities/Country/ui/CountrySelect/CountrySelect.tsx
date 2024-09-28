@@ -1,6 +1,6 @@
 import { Country } from '../../model/types/country';
 import { memo, useCallback } from 'react';
-import { BoxList } from 'shared/ui/Popups/ui/BoxList/BoxList';
+import { BoxList } from '@/shared/ui/Popups/ui/BoxList/BoxList';
 
 interface CountrySelectProps {
     className?: string;
