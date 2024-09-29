@@ -51,13 +51,13 @@ export function Dropdown(props: DropdownProps) {
           )
           if(item.href) {
             return (
-              <MenuItem as={AppLink} to={item.href} key={index}>
+              <MenuItem as={AppLink} to={item.href} key={`dropdown-key-${index}`}>
                 {content}
               </MenuItem>
             )
           }
           return (
-            <MenuItem as={Fragment} key={index}>
+            <MenuItem as={Fragment} key={`dropdown-key-${index}`}>
               {content}
             </MenuItem>
           )

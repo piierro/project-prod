@@ -1,0 +1,1 @@
+export { ReitingCard } from './ui/ReitingCard/ReitingCard'

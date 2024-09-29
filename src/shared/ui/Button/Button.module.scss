@@ -28,23 +28,29 @@
 }
 
 .error {
-    padding: 15px 10px;
-    font-size: 18px;
+    padding: 5px 10px;
     background: transparent;
-    border: 1px solid #930000;
-    color: #fff6f6b1;
+    border: 0.5px solid var(--error-dark);
+    color: var(--error-dark);
 }
 
 .error:hover {
-    background: #930000;
-    color: #000;
+    background: var(--error-dark);
+    color: var(--primary-color);;
     transition: 0.3s;
 }
 
 .background {
-    background: var(--bg-color);
+    padding: 5px 10px;
+    background: transparent;
+    border: 0.5px solid var(--secondory-color);
+    color: var(--secondory-color);
+}
+
+.background:hover {
+    background: var(--secondory-color);
     color: var(--primary-color);
-    border: none;
+    transition: 0.3s; 
 }
 
 .backgroundInverted {
@@ -89,4 +95,8 @@
 
 .disabled {
     opacity: 0.5;
+}
+
+.fullWidth {
+    width: 100%;
 }
