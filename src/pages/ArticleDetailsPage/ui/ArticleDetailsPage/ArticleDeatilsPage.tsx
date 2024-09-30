@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { 
   DynamicModuleLoader, ReducersList 
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Page } from '@/widgetes/Page/Page';
+import { Page } from '@/widgetes/Page';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPgeHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { WStack } from '@/shared/ui/Stack';
