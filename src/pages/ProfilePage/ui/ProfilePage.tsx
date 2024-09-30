@@ -3,6 +3,7 @@ import { Page } from '@/widgetes/Page/Page';
 import { WStack } from '@/shared/ui/Stack';
 import { EditableProfileCard } from '@/features/editableProfileCard';
 import { useParams } from 'react-router-dom';
+import { ProfileRating } from '@/features/profileRating';
 // import * as cls from './ProfilePage.module.scss';
 
 interface PageLoaderProps {
@@ -12,10 +13,15 @@ interface PageLoaderProps {
 const ProfilePage = ({className}: PageLoaderProps) => {
   const { id } = useParams<{id: string}>();
 
+  if(!id) {
+    return null
+  }
+
   return (
     <Page className={classNames('', {}, [className])}>
       <WStack gap="16" max>
         <EditableProfileCard id={id} />
+        <ProfileRating profileId={id} />
       </WStack>
     </Page>
   )

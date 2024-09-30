@@ -1,0 +1,1 @@
+export { ProfileRatingAsync as ProfileRating } from './ui/ProfileRaring/ProfileRating.async';
