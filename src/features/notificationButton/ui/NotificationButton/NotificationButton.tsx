@@ -42,9 +42,9 @@ export const NotificationButton = memo(({ className }: NotificationButtonProps) 
       </BrowserView>
       <MobileView>
         {trigger}
-          <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-            <NotificationList />
-          </Drawer>
+        <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+          <NotificationList />
+        </Drawer>
       </MobileView>
     </div>
   )

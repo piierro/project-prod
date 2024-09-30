@@ -679,5 +679,62 @@
       "username": "kuros",
       "avatar": "https://sun9-33.userapi.com/impg/JOZp_Q56GaXoxGie_jCooQyf7kT1Du5D0UVinQ/SIAs1hwSoWY.jpg?size=604x604&quality=96&sign=15ac6e5f64afaa38dacbfb42242bb239&type=album"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 5,
+      "feedback": "Хорошая статья",
+      "userId": "2",
+      "articleId": "2"
+    },
+    {
+      "userId": "2",
+      "articleId": "5",
+      "rate": 5,
+      "feedback": "проверка отправки на сервер",
+      "id": "K1oqiow"
+    },
+    {
+      "userId": "2",
+      "articleId": "6",
+      "rate": 5,
+      "id": "eHtGOB8"
+    },
+    {
+      "userId": "2",
+      "articleId": "4",
+      "rate": 1,
+      "id": "tGD4Ijv"
+    },
+    {
+      "userId": "2",
+      "articleId": "3",
+      "rate": 3,
+      "id": "hzhIXOs"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 5,
+      "feedback": "Райкири!!!",
+      "userId": "1",
+      "profileId": "2"
+    },
+    {
+      "id": "2",
+      "rate": 2,
+      "feedback": "Отстой",
+      "userId": "2",
+      "profileId": "1"
+    }
   ]
 }

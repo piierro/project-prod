@@ -25,7 +25,7 @@ export function MyPopover(props: PopoverProps) {
 
   return (
     <Popover as="div" className={classNames('', {}, [className, popupCls.popup])}>
-      <PopoverButton className={popupCls.trigger}>
+      <PopoverButton as="div" className={popupCls.trigger}>
         {trigger}
       </PopoverButton>
       <PopoverPanel className={classNames(cls.panel, {}, menuClasses)}>
