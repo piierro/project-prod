@@ -68,7 +68,7 @@ export const ReitingCard = memo((props: ReitingCardProps) => {
   return (
     <Card className={className} max>
       <WStack align='center' gap='16'>
-        <Text title={title} />
+        <Text title={starsCount ? 'Спасибо за оценку!' : title} />
         <StarsRating selectedStars={starsCount} size={40} onSelect={onSelectStars}/>
       </WStack>
       <BrowserView>

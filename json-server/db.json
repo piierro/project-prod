@@ -694,9 +694,16 @@
       "feedback": "Хорошая статья",
       "userId": "2",
       "articleId": "2"
+    },
+    {
+      "userId": "2",
+      "articleId": "5",
+      "rate": 5,
+      "feedback": "проверка отправки на сервер",
+      "id": "K1oqiow"
     }
   ],
-    "profile-ratings": [
+  "profile-ratings": [
     {
       "id": "1",
       "rate": 5,
