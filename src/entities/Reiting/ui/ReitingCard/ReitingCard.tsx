@@ -3,7 +3,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo, useCallback, useState } from 'react';
 import { Card } from '@/shared/ui/Card/Card';
 import { HStack, WStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { StarsRating } from '@/shared/ui/StarsRating/StarsRating';
 import { Modal } from '@/shared/ui/Modal/Modal';
 import { Input } from '@/shared/ui/Input/Input';
@@ -18,6 +18,7 @@ interface ReitingCardProps {
   hasFeedBack?: boolean;
   onCancel?: (starCount: number) => void;
   onAccept?: (starCount: number, feedBack?: string) => void;
+  rate?: number;
 }
 
 export const ReitingCard = memo((props: ReitingCardProps) => {
@@ -27,10 +28,11 @@ export const ReitingCard = memo((props: ReitingCardProps) => {
     feedBackTitle,
     hasFeedBack,
     onAccept,
-    onCancel
+    onCancel,
+    rate = 0
   } = props;
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [starsCount, setStarsCount] = useState(0);
+  const [starsCount, setStarsCount] = useState(rate);
   const [feedback, setFeedBack] = useState('');
 
   const onSelectStars = useCallback((selectedStarsCount: number) => {
@@ -54,7 +56,7 @@ export const ReitingCard = memo((props: ReitingCardProps) => {
 
   const modalContent = (
     <>
-      <Text title={feedBackTitle} />
+      <Text title={feedBackTitle} size={TextSize.M}/>
       <Input 
         value={feedback} 
         onChange={setFeedBack} 
@@ -64,10 +66,10 @@ export const ReitingCard = memo((props: ReitingCardProps) => {
   )
 
   return (
-    <Card className={classNames('', {}, [className])}>
-      <WStack align='center' gap='32'>
+    <Card className={className} max>
+      <WStack align='center' gap='16'>
         <Text title={title} />
-        <StarsRating size={40} onSelect={onSelectStars}/>
+        <StarsRating selectedStars={starsCount} size={40} onSelect={onSelectStars}/>
       </WStack>
       <BrowserView>
         <Modal isOpen={isModalOpen} lazy>
