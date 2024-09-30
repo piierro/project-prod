@@ -1,5 +1,3 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-// import * as cls from './ReitingCard.module.scss'
 import { memo, useCallback, useState } from 'react';
 import { Card } from '@/shared/ui/Card/Card';
 import { HStack, WStack } from '@/shared/ui/Stack';

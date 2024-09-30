@@ -3,11 +3,11 @@
 }
 
 .normal {
-    fill: var(--inverted-bg-color);
+    fill: var(--secondory-color);
 }
 
 .hovered {
-    fill: var(--secondory-color);
+    fill: var(--bg-color);
 }
 
 .selected {

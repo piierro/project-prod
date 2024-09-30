@@ -701,6 +701,24 @@
       "rate": 5,
       "feedback": "проверка отправки на сервер",
       "id": "K1oqiow"
+    },
+    {
+      "userId": "2",
+      "articleId": "6",
+      "rate": 5,
+      "id": "eHtGOB8"
+    },
+    {
+      "userId": "2",
+      "articleId": "4",
+      "rate": 1,
+      "id": "tGD4Ijv"
+    },
+    {
+      "userId": "2",
+      "articleId": "3",
+      "rate": 3,
+      "id": "hzhIXOs"
     }
   ],
   "profile-ratings": [

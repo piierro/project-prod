@@ -11,39 +11,39 @@ export interface ArticleRatingProps {
 }
 
 const ArticleRating = memo(({ className, articleId }: ArticleRatingProps) => {
-    const userData = useSelector(getUserAuthData)
-    const {data, isLoading } = useGetArticleRating({
+  const userData = useSelector(getUserAuthData)
+  const {data, isLoading } = useGetArticleRating({
+    articleId,
+    userId: userData?.id ?? ''
+  })
+  const [rateArticleMutation] = useRateArticel()
+
+  const handleRateArticle = useCallback((starCount: number, feedBack?: string) => {
+    try {
+      rateArticleMutation({
+        userId: userData?.id ?? '',
         articleId,
-        userId: userData?.id ?? ''
-    })
-    const [rateArticleMutation] = useRateArticel()
-
-    const handleRateArticle = useCallback((starCount: number, feedBack?: string) => {
-        try {
-        rateArticleMutation({
-            userId: userData?.id ?? '',
-            articleId,
-            rate: starCount,
-            feedback: feedBack
-        }) 
-        } catch(e) {
-           console.log(e)
-        }
-    }, [articleId, rateArticleMutation, userData?.id])
-
-    const onCancel = useCallback((starCount: number) => {
-      handleRateArticle(starCount)
-    }, [handleRateArticle])
-
-    const onAccept = useCallback((starCount: number, feedBack?: string) => {
-        handleRateArticle(starCount, feedBack)
-    }, [handleRateArticle])
-
-    if(isLoading) {
-        return <Skeleton width={'100%'} height={120} border={'10px'} />
+        rate: starCount,
+        feedback: feedBack
+      }) 
+    } catch(e) {
+      console.log(e)
     }
+  }, [articleId, rateArticleMutation, userData?.id])
 
-    const rating = data?.[0]
+  const onCancel = useCallback((starCount: number) => {
+    handleRateArticle(starCount)
+  }, [handleRateArticle])
+
+  const onAccept = useCallback((starCount: number, feedBack?: string) => {
+    handleRateArticle(starCount, feedBack)
+  }, [handleRateArticle])
+
+  if(isLoading) {
+    return <Skeleton width={'100%'} height={120} border={'10px'} />
+  }
+
+  const rating = data?.[0]
 
   return (
     <ReitingCard
