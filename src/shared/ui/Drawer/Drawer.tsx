@@ -1,4 +1,4 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from '../../lib/classNames/classNames';
 import * as cls from'./Drawer.module.scss'
 import { ReactNode, memo, useCallback, useEffect } from 'react';
 import { useTheme } from '@/app/providers/ThemeProvider';

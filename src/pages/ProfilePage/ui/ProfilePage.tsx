@@ -4,7 +4,6 @@ import { WStack } from '@/shared/ui/Stack';
 import { EditableProfileCard } from '@/features/editableProfileCard';
 import { useParams } from 'react-router-dom';
 import { ProfileRating } from '@/features/profileRating';
-// import * as cls from './ProfilePage.module.scss';
 
 interface PageLoaderProps {
     className?: string 

@@ -1,4 +1,4 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from '../../lib/classNames/classNames';
 import * as cls from './Card.module.scss'
 import { HTMLAttributes, ReactNode, memo } from 'react';
 
