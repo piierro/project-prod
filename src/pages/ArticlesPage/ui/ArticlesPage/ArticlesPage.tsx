@@ -6,7 +6,7 @@ import {
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { articelPageReducer } from '../../model/slices/articlePageSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Page } from '@/widgetes/Page/Page';
+import { Page } from '@/widgetes/Page';
 import { fetchNexrArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { ArticlesPageFilter } from '../ArticlesPageFiters/ArticlesPageFiters';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';

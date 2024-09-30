@@ -725,16 +725,20 @@
     {
       "id": "1",
       "rate": 5,
-      "feedback": "Райкири!!!",
       "userId": "1",
       "profileId": "2"
     },
     {
       "id": "2",
       "rate": 2,
-      "feedback": "Отстой",
       "userId": "2",
       "profileId": "1"
+    },
+    {
+      "userId": "2",
+      "profileId": "2",
+      "rate": 5,
+      "id": "MVGLlfB"
     }
   ]
 }

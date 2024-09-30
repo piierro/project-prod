@@ -1,5 +1,5 @@
 import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text/Text';
-import { Page } from '@/widgetes/Page/Page';
+import { Page } from '@/widgetes/Page';
 import * as cls from './ForbiddenPage.module.scss';
 
 const ForbiddenPage = () => {

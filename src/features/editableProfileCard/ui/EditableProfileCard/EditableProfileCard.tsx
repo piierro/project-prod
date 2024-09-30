@@ -13,14 +13,14 @@ import {
   ReducersList 
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
-import { profileActions, profileReducer } from '../..//model/slice/ProfileSlice';
-import { getProfileError } from '../..//model/selectors/getProfileError/getProfileError';
-import { getProfileIsLoading } from '../..//model/selectors/getProfileIsLoading/getProfileIsLoading';
-import { getProfileRedonly } from '../..//model/selectors/getProfileReadonly/getProfileReadonly';
+import { profileActions, profileReducer } from '../../model/slice/ProfileSlice';
+import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
+import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
+import { getProfileRedonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import {
   getValidateProfileErrors 
-} from '../..//model/selectors/getValidateProfileErrors/getValidateProfileErrors';
-import { fetchProfileData } from '../..//model/services/fetchProfileData/fetchProfileData';
+} from '../../model/selectors/getValidateProfileErrors/getValidateProfileErrors';
+import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { WStack } from '@/shared/ui/Stack';
 

@@ -1,4 +1,4 @@
-import { Page } from '@/widgetes/Page/Page';
+import { Page } from '@/widgetes/Page';
 
 const MainPage = () => {
   return (

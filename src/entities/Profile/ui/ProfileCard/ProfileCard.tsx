@@ -5,9 +5,9 @@ import { Loader } from '@/shared/ui/Loader/Loader';
 import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from '@/entities/Currency';
-import { Country, CountrySelect } from '@/entities/Country';
 import { HStack, WStack } from '@/shared/ui/Stack';
-import { Profile } from '@/entities/Profile';
+import { Profile } from '../../model/types/profile';
+import { Country, CountrySelect } from '@/entities/Country';
 
 interface ProfileCardProps {
     className?: string;
