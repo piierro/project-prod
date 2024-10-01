@@ -34,7 +34,7 @@ export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
 
     return () => {
       if(removeAfterAnMount) {
-        Object.entries(reducers).forEach(([name, reducer]) => {
+        Object.entries(reducers).forEach(([name]) => {
           store.reducerManager.remove(name as StateSchemaKey)
         })
       }
