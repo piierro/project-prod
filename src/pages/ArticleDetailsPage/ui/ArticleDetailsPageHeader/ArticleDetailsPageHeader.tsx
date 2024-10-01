@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { getArticleDetailsData } from '@/entities/Article';
 import { getCanEditArticle } from '../../model/selectors/articel';
 import { HStack } from '@/shared/ui/Stack';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 
 interface ArticleDetailsPgeHeaderProps {
   className?: string;
@@ -19,12 +19,14 @@ export const ArticleDetailsPgeHeader = memo(({ className }: ArticleDetailsPgeHea
   const canEdit = useSelector(getCanEditArticle);
     
   const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles)
+    navigate(getRouteArticles())
   }, [navigate])
 
   const onEditArticle = useCallback(() => {
-    navigate(`${RoutePath.article_details}${article?.id}/edit`)
-  }, [navigate, article?.id])
+    if(article) {
+      navigate(getRouteArticleEdit(article.id))
+    }
+  }, [navigate, article])
 
   return (
     <HStack align='center' className={classNames('', {}, [className])}>

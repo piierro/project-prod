@@ -16,6 +16,7 @@ const config: Config = {
     // "^src/(.*)": "<rootDir>/../src/$1",
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     '\\.(scss|less)$': 'identity-obj-proxy',
+    "^@/(.*)$": "<rootDir>/src/$1"
   },
 
   // transform: {

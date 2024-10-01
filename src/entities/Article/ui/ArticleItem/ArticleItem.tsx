@@ -11,7 +11,7 @@ import { Button, ThemeButton } from '@/shared/ui/Button';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { AppLink } from '@/shared/ui/AppLink';
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 
 interface ArticleItemProps {
   className?: string;
@@ -53,7 +53,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
           <div className={cls.footer}>
             <AppLink 
               target={target}
-              to={RoutePath.article_details + article.id}
+              to={getRouteArticleDetails(article.id)}
             >
               <Button 
                 theme={ThemeButton.BACKGGROUND_INVERTED}
@@ -71,7 +71,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
   return (
     <AppLink 
       target={target}
-      to={RoutePath.article_details + article.id}
+      to={getRouteArticleDetails(article.id)}
       className={classNames('', {}, [className, cls[view]])}
     >
       <Card>

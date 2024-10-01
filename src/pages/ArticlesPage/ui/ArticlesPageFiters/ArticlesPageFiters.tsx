@@ -11,10 +11,7 @@ import {
 } from '../../model/selectors/articlesPageSelectors';
 import { 
   ArticleSortField, 
-  ArticleSortSelect, 
-  ArticleTypeTabs, 
   ArticleView, 
-  ArticleViewSelector 
 } from '@/entities/Article';
 import { articelPageActions } from '../../model/slices/articlePageSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -24,6 +21,9 @@ import { SortOrder } from '@/shared/types';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { ArticleType } from '@/entities/Article';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { ArticleViewSelector } from '@/features/ArticleViewSelector';
 
 interface ArticlesPageFilterProps {
   className?: string;
@@ -74,7 +74,7 @@ export const ArticlesPageFilter = memo(({ className }: ArticlesPageFilterProps) 
   return (
     <div className={classNames(cls.ArticlesPageFilter, {}, [className])}>
       <div className={cls.sortWrapper}>
-        <ArticleSortSelect 
+        <ArticleSortSelector 
           sort={sort}
           order={order}
           onChangeOrder={onChangeOrder}

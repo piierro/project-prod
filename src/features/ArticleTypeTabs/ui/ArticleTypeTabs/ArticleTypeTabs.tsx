@@ -3,8 +3,8 @@ import * as cls from './ArticleTypeTabs.module.scss';
 import { memo, useCallback, useMemo } from 'react';
 import { TabItem, Tabs } from '@/shared/ui/Tabs';
 import { AppLink } from '@/shared/ui/AppLink';
-import { ArticleType } from '../../model/consts/articleConsts';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleCreate } from '@/shared/const/router';
+import { ArticleType } from '@/entities/Article';
 
 interface ArticleTypeTabsProps {
   className?: string;
@@ -46,7 +46,7 @@ export const ArticleTypeTabs = memo(({ className, value, onChangeType }: Article
         className={classNames('', {}, [className])} 
       />
       <AppLink 
-        to={RoutePath.article_create}
+        to={getRouteArticleCreate()}
         className={cls.createArticle}
       >
         Создать статью
