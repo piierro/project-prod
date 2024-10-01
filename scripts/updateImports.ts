@@ -1,5 +1,7 @@
 import { Project } from 'ts-morph';
 
+// ts-node ./scripts/updateImports.ts   
+
 const project = new Project({});
 
 project.addSourceFilesAtPaths('src/**/*.ts');

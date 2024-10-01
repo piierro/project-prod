@@ -1,11 +1,11 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import * as cls from './Sidebar.module.scss';
 import { memo, useMemo, useState } from 'react';
-import { Button, SizeButton, ThemeButton } from '@/shared/ui/Button/Button';
+import { Button, SizeButton, ThemeButton } from '@/shared/ui/Button';
 import BurgerMenu from '@/shared/assets/icons/menu.svg'
 import { SidebarItem } from '../../SidebarItem/SidebarItem';
 import { useSelector } from 'react-redux';
-import { WStack } from '@/shared/ui/Stack/WStack/WStack';
+import { WStack } from '@/shared/ui/Stack';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 

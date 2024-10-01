@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import * as cls from './Navbar.module.scss';
-import { Button, ThemeButton } from '@/shared/ui/Button/Button';
+import { Button, ThemeButton } from '@/shared/ui/Button';
 import { memo, useCallback, useState } from 'react';
 import { LoginModal } from '@/features/AuthByUsername';
 import { useSelector } from 'react-redux';

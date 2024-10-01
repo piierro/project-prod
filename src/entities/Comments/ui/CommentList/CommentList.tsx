@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { CommentCard } from '../CommentCard/CommentCard';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { Comment } from '../../model/types/comments'
 import { WStack } from '@/shared/ui/Stack';
 

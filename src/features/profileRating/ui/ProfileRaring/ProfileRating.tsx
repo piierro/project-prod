@@ -2,7 +2,7 @@ import { ReitingCard } from '@/entities/Reiting';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { useGetProfileRating, useRateProfile } from '../../api/profileRatingApi';
 
 export interface ProfileRatingProps {
