@@ -3,8 +3,8 @@ import * as cls from './ArticleTypeTabs.module.scss';
 import { memo, useCallback, useMemo } from 'react';
 import { TabItem, Tabs } from '@/shared/ui/Tabs';
 import { AppLink } from '@/shared/ui/AppLink';
-import { ArticleType } from '../../model/consts/articleConsts';
 import { getRouteArticleCreate } from '@/shared/const/router';
+import { ArticleType } from '@/entities/Article';
 
 interface ArticleTypeTabsProps {
   className?: string;
