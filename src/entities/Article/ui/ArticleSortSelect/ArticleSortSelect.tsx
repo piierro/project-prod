@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import * as cls from './ArticleSortSelect.module.scss';
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import { Select, SelectOption } from '@/shared/ui/Select';
 import { SortOrder } from '@/shared/types';
 import { ArticleSortField } from '../../model/consts/articleConsts';
@@ -22,7 +22,7 @@ export const ArticleSortSelect = memo((props: ArticleSortSelectProps) => {
     sort
   } = props;
 
-  const orderOptions = useMemo<SelectOption[]>(() => [
+  const orderOptions = useMemo<SelectOption<SortOrder>[]>(() => [
     {
       value: 'asc',
       content: 'возрастанию'
@@ -33,7 +33,7 @@ export const ArticleSortSelect = memo((props: ArticleSortSelectProps) => {
     }
   ], [])
 
-  const sortFieldOptions = useMemo<SelectOption[]>(() => [
+  const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(() => [
     {
       value: ArticleSortField.CREATED,
       content: 'дате создания'
@@ -48,27 +48,27 @@ export const ArticleSortSelect = memo((props: ArticleSortSelectProps) => {
     }
   ], [])
 
-  const changeSortHandler = useCallback((newSort: string) => {
-    onChangeSort(newSort as ArticleSortField)
-  }, [onChangeSort])
+  // const changeSortHandler = useCallback((newSort: string) => {
+  //   onChangeSort(newSort as ArticleSortField)
+  // }, [onChangeSort])
 
-  const changeOrderHandler = useCallback((newOrder: string) => {
-    onChangeOrder(newOrder as SortOrder)
-  }, [onChangeOrder])
+  // const changeOrderHandler = useCallback((newOrder: string) => {
+  //   onChangeOrder(newOrder as SortOrder)
+  // }, [onChangeOrder])
 
   return (
     <div className={classNames(cls.ArticleSortSelect, {}, [className])}>
-      <Select 
+      <Select<ArticleSortField>
         options={sortFieldOptions} 
         label={'Сортировать по'} 
         value={sort}
-        onChange={changeSortHandler}
+        onChange={onChangeSort}
       />
       <Select 
         options={orderOptions} 
         label={'по'} 
         value={order}
-        onChange={changeOrderHandler}
+        onChange={onChangeOrder}
         className={cls.order}
       />
     </div>
