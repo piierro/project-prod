@@ -13,12 +13,12 @@ import {
   getArticleDetailsError, 
   getArticleDetailsIsLoading 
 } from '../../model/selectors/articleDetails';
-import { Text, TextAlign, TextSize } from '@/shared/ui/Text/Text';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Avatar } from '@/shared/ui/Avatar';
 import DataIcon from '@/shared/assets/icons/data.svg';
 import PreviewIcon from '@/shared/assets/icons/preview.svg';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Icon } from '@/shared/ui/Icon';
 import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';

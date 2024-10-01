@@ -6,12 +6,14 @@ import { fixupConfigRules } from "@eslint/compat";
 import eslintReactHooks from 'eslint-plugin-react-hooks';
 import { dirname } from "path";
 import { fixupPluginRules } from "@eslint/compat";
+import unusedImports from "eslint-plugin-unused-imports";
 
 export default tseslint.config (
   {
   plugins: {
     'react-hooks': fixupPluginRules(eslintReactHooks),
     '@typescript-eslint':  tseslint.plugin,
+    "unused-imports": unusedImports,
   },
   rules: eslintReactHooks.configs.recommended.rules,
   },
@@ -72,6 +74,7 @@ export default tseslint.config (
     "react/display-name": "off",
     "no-undef": "off",
     "@typescript-eslint/no-explicit-any": "warn",
+    "unused-imports/no-unused-imports": "error",
    },
   }
 );

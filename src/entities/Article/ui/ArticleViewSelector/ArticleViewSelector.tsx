@@ -3,8 +3,8 @@ import * as cls from './ArticleViewSelector.module.scss';
 import { memo } from 'react';
 import ListIcon from '@/shared/assets/icons/list.svg';
 import TilesIcon from '@/shared/assets/icons/plitka.svg';
-import { Button } from '@/shared/ui/Button/Button';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Button } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
 import { ArticleView } from '../../model/consts/articleConsts';
 
 interface ArticleViewSelectorProps {

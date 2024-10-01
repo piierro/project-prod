@@ -1,4 +1,4 @@
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { ProfileRatingProps } from './ProfileRating';
 import { Suspense, lazy, } from 'react';
 

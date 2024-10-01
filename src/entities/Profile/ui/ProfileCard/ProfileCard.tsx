@@ -1,9 +1,9 @@
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import * as cls from './ProfileCard.module.scss';
-import { Input } from '@/shared/ui/Input/Input';
-import { Loader } from '@/shared/ui/Loader/Loader';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Input } from '@/shared/ui/Input';
+import { Loader } from '@/shared/ui/Loader';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
+import { Avatar } from '@/shared/ui/Avatar';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { HStack, WStack } from '@/shared/ui/Stack';
 import { Profile } from '../../model/types/profile';

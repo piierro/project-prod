@@ -1,13 +1,13 @@
 import { memo, useCallback, useState } from 'react';
-import { Card } from '@/shared/ui/Card/Card';
+import { Card } from '@/shared/ui/Card';
 import { HStack, WStack } from '@/shared/ui/Stack';
-import { Text, TextSize } from '@/shared/ui/Text/Text';
-import { StarsRating } from '@/shared/ui/StarsRating/StarsRating';
-import { Modal } from '@/shared/ui/Modal/Modal';
-import { Input } from '@/shared/ui/Input/Input';
-import { Button, SizeButton, ThemeButton } from '@/shared/ui/Button/Button';
+import { Text, TextSize } from '@/shared/ui/Text';
+import { StarsRating } from '@/shared/ui/StarsRating';
+import { Modal } from '@/shared/ui/Modal';
+import { Input } from '@/shared/ui/Input';
+import { Button, SizeButton, ThemeButton } from '@/shared/ui/Button';
 import { BrowserView, MobileView } from 'react-device-detect';
-import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import { Drawer } from '@/shared/ui/Drawer';
 
 interface ReitingCardProps {
   className?: string;
