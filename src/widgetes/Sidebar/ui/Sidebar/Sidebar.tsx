@@ -7,7 +7,7 @@ import { SidebarItem } from '../../SidebarItem/SidebarItem';
 import { useSelector } from 'react-redux';
 import { WStack } from '@/shared/ui/Stack/WStack/WStack';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
-import { ThemeSwitcher } from './../../../ThemeSwitcher';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 
 interface SidebarProps {
   className?: string 
